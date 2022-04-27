@@ -1,0 +1,108 @@
+\documentclass[11pt]{article}
+
+% Engine-specific settings
+% Detect pdftex/xetex/luatex, and load appropriate font packages.
+% This is inspired by the approach in the iftex package.
+% pdftex:
+\ifx\pdfmatch\undefined
+\else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+\fi
+% xetex:
+\ifx\XeTeXinterchartoks\undefined
+\else
+    \usepackage{fontspec}
+    \defaultfontfeatures{Ligatures=TeX}
+\fi
+% luatex:
+\ifx\directlua\undefined
+\else
+    \usepackage{fontspec}
+\fi
+% End engine-specific settings
+
+\usepackage[svgnames]{xcolor}
+\usepackage{url}
+\urlstyle{same}
+
+\usepackage[depythontex]{pythontex}
+
+\usepackage[framemethod=TikZ]{mdframed}
+
+%\pagenumbering{gobble}
+
+\usepackage[russian]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{calc,ifthen}
+\usepackage{parskip}
+\setlength{\parindent}{0pt}
+
+\usepackage{verbatim}   % for the comment environment
+
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\D}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\As}{As}
+%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[in]{fullpage}
+%\usepackage{pscyr}
+%\usepackage{SclBookC}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}{\rmfamily}{}{%
+  \small
+}{%
+}
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+   \ifthenelse{\isundefined{\hidesolution}}%
+       {\small \textbf{\textit{Решение.\break}}}%
+       {
+          \expandafter\comment
+       }%
+}%
+{%
+   \ifthenelse{\isundefined{\hidesolution}}%
+       {}%
+       {\expandafter\endcomment}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\biletnumber}{1}
+\providecommand{\biletnumber}{1}
+
+\begin{document}
+
+%\begin{center}
+\centerline{\footnotesize{ФЕДЕРАЛЬНОЕ\,\, ГОСУДАРСТВЕННОЕ\,\, ОБРАЗОВАТЕЛЬНОЕ\,\, БЮДЖЕТНОЕ}}
+\centerline{\footnotesize{УЧРЕЖДЕНИЕ\,\, ВЫСШЕГО\,\, ОБРАЗОВАНИЯ}}
+
+\centerline{\small{\textbf{<<ФИНАНСВЫЙ\,\,УНИВЕРСИТЕТ\,\,ПРИ\,\,ПРАВИТЕЛЬСТВЕ}}}
+\centerline{\small{\textbf{РОССИЙСКОЙ\,\,ФЕДЕРАЦИИ>>}}}
+\centerline{\small{\textbf{(ФИНАНСОВЫЙ УНИВЕРСИТЕТ)}}}
+
+\hfill \break
+\centerline{\normalsize{Департамент анализа данных и машинного обучения}}\\
+
+%\hfill \break
+\centerline{\normalsize{{\textit{\textbf{Дисциплина: <<Теория вероятностей и математическая статистика>>}}}}}
+\centerline{\small{\textit{Направление подготовки: 01.03.02 <<Прикладная математика и информатика>>}}}
+\centerline{\small{\textit{Профиль: <<Анализ данных и принятие решений в экономике и финансах>>}}}
+\centerline{\small{\textit{Факультет информационных технологий и анализа больших данных}}}
+\centerline{\small{\textit{Форма обучения очная}}}
+\centerline{\small{\textit{Учебный 2020/2021 год, 3 семестр}}}
+
+\hfill \break
+%\end{center}
+\centerline{\textbf{Билет № \biletnumber}}
+
+%<body>
+
+\end{document}
