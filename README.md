@@ -58,7 +58,7 @@ html2pdf(os.path.join(os.getcwd(), 'RESULTS', 'html', 'only_problems'), \
 
 TODO
 ----------
-[] Создать файл requirements.txt для легкой установки необходимых python зависимостей.
+- [ ] Создать файл requirements.txt для легкой установки необходимых python зависимостей.
 
 Лицензия
 -------
