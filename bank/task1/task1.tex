@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+\usepackage[depythontex]{pythontex}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+\begin{pycode}
+from random import randint
+def rrstr(x, n): # округление до n знаков после запятой
+    fmt = '{:.' + str(n) + 'f}'
+    return fmt.format(x)#.replace('.',',')
+N = randint(5, 17)
+n = randint(3, N)
+Omega = [randint(2, 7) for x in range(N)]
+xo_mean = sum(Omega) / len(Omega)
+e_sample_average = rrstr(xo_mean, 5)
+sigma_2 = sum([(xi - xo_mean) ** 2 for xi in Omega]) / len(Omega)
+var_sample_average = rrstr((sigma_2 / n) * ((N - n) / (N - 1)), 5)
+itr = iter(list(range(1, N+1)))
+x = 0
+\end{pycode}
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $\py{N}$\} следующей таблицей:
+\begin{center}
+	\pys{\begin{tabular}{|c|!{f"{'c|'*N}"}}
+	\hline
+	$k$ & !{f"{' & '.join(map(str, list(range(1, N+1))))}"}\\
+	\hline
+	$X(k)$ & !{f"{' & '.join(map(str, Omega))} \\\\\n"}
+	\hline
+	\end{tabular}}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема \py{n}. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{\py{e_sample_average}}{0.5}{3}{0.01}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{\py{var_sample_average}}{0.5}{3}{0.01}
+\end{solution}
+
+
+\end{document}
