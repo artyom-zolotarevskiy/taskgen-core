@@ -1,0 +1,3700 @@
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.log'
+Latexmk: applying rule 'latex'...
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux) (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd)
+No file pythontex-files-task1/task1.pytxmcr.
+Run PythonTeX to create it.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+Package PythonTeX Warning: Missing autoprint content on input line 69.
+
+
+Package PythonTeX Warning: Missing sub content on input line 77.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 80.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 85.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 86.
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 11680 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  task1.aux
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 2 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+No file pythontex-files-task1/task1.pytxmcr.
+Run PythonTeX to create it.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+Package PythonTeX Warning: Missing autoprint content on input line 69.
+
+
+Package PythonTeX Warning: Missing sub content on input line 77.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 80.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 85.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 86.
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 11680 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12312 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $11$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11\\ 	\hline 	$X(k)$ & 4 & 4 & 4 & 5 & 3 & 2 & 3 & 6 & 7 & 2 & 5 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 7. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{4.09091}{0.5}{3}{0.001}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.12940}{0.5}{3}{0.001}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Nothing to do for 'task1.tex'.
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/py_default_default_2.stdout
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12012 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $5$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5\\ 	\hline 	$X(k)$ & 5 & 7 & 7 & 5 & 2 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 4. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{5.20000}{0.5}{3}{0.001}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.21000}{0.5}{3}{0.001}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Nothing to do for 'task1.tex'.
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/py_default_default_2.stdout
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12516 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $15$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\ 	\hline 	$X(k)$ & 2 & 3 & 6 & 6 & 2 & 3 & 4 & 3 & 2 & 3 & 6 & 7 & 6 & 5 & 6 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 5. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{4.26667}{0.5}{3}{0.001}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.42794}{0.5}{3}{0.001}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Nothing to do for 'task1.tex'.
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/py_default_default_2.stdout
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12060 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $6$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6\\ 	\hline 	$X(k)$ & 5 & 5 & 6 & 7 & 7 & 2 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 6. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{5.33333}{0.5}{3}{0.001}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.00000}{0.5}{3}{0.001}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Nothing to do for 'task1.tex'.
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/py_default_default_2.stdout
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12060 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $6$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6\\ 	\hline 	$X(k)$ & 3 & 3 & 6 & 2 & 3 & 6 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 4. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{3.83333}{0.5}{3}{0.001}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.24722}{0.5}{3}{0.001}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Nothing to do for 'task1.tex'.
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/py_default_default_2.stdout
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12468 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $14$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14\\ 	\hline 	$X(k)$ & 5 & 2 & 6 & 7 & 5 & 6 & 7 & 6 & 5 & 6 & 7 & 3 & 6 & 2 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 10. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{5.21429}{0.5}{3}{0.001}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.08430}{0.5}{3}{0.001}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  task1.tex
+   No-longer-existing files:
+  pythontex-files-task1/py_default_default_2.stdout
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+No file pythontex-files-task1/task1.pytxmcr.
+Run PythonTeX to create it.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+Package PythonTeX Warning: Missing autoprint content on input line 69.
+
+
+Package PythonTeX Warning: Missing sub content on input line 77.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 80.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 85.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 86.
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 11680 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12112 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $7$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ 	\hline 	$X(k)$ & 2 & 2 & 5 & 3 & 3 & 6 & 4 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 7. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{3.57143}{0.5}{3}{0.01}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.00000}{0.5}{3}{0.01}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Nothing to do for 'task1.tex'.
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/py_default_default_2.stdout
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12416 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $13$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13\\ 	\hline 	$X(k)$ & 3 & 7 & 2 & 6 & 7 & 4 & 3 & 6 & 7 & 4 & 2 & 2 & 7 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 8. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{4.61538}{0.5}{3}{0.01}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.21265}{0.5}{3}{0.01}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Nothing to do for 'task1.tex'.
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  task1.tex
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+No file pythontex-files-task1/task1.pytxmcr.
+Run PythonTeX to create it.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+Package PythonTeX Warning: Missing autoprint content on input line 69.
+
+
+Package PythonTeX Warning: Missing sub content on input line 77.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 80.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 85.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 86.
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 11680 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  task1.aux
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 2 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+No file pythontex-files-task1/task1.pytxmcr.
+Run PythonTeX to create it.
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+
+Package PythonTeX Warning: Missing autoprint content on input line 69.
+
+
+Package PythonTeX Warning: Missing sub content on input line 77.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 80.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 85.
+
+
+Package PythonTeX Warning: Missing autoprint content on input line 86.
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 11680 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12060 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Получаем версию файла без python...
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $6$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6\\ 	\hline 	$X(k)$ & 6 & 2 & 5 & 4 & 4 & 4 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 4. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{4.16667}{0.5}{3}{0.01}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.14722}{0.5}{3}{0.01}
+\end{solution}
+
+
+\end{document}
+
+Сохраняем версию файла без python...
+Компилируем файл "./bank/task1/task1"...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: Nothing to do for 'task1.tex'.
+Latexmk: All targets (task1.dvi) are up-to-date
+
+Выполняем python код...
+This is PythonTeX 0.18
+
+--------------------------------------------------
+PythonTeX:  task1 - 0 error(s), 0 warning(s)
+
+
+Еще раз компилируем...
+Rc files read:
+  NONE
+Latexmk: This is Latexmk, John Collins, 17 Mar. 2022. Version 4.77, version: 4.77.
+No specific requests made, so using default for latexmk.
+Latexmk: applying rule 'latex'...
+Rule 'latex': File changes, etc:
+   Changed files, or newly in use since previous run(s):
+  pythontex-files-task1/py_default_default_2.stdout
+  pythontex-files-task1/task1.pytxmcr
+Rule 'latex': The following rules & subrules became out-of-date:
+  latex
+------------
+Run number 1 of rule 'latex'
+------------
+------------
+Running 'latex  -recorder  "task1.tex"'
+------------
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=latex)
+ restricted \write18 enabled.
+entering extended mode
+(./task1.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-02-24>
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/pgf.revision.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-def/dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.de
+f
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+ostscript.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex)) (/usr/local/texlive/2022/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/graphics-cfg/color.cfg))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/local/texlive/2022/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xfp/xfp.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-dvips.def)))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/tools/array.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/random/random.tex)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lcg/lcg.sty
+Smallest possible random number: 1
+Largest possible random number: 2147483647
+The pseudo random numbers will be stored in the LaTeX counter `rand'
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/babel-russian/russianb.ldf
+
+Package babel Warning: No Cyrillic font encoding has been loaded so far.
+(babel)                A font encoding should be declared before babel.
+(babel)                Default `T2A' encoding will be loaded  on input line 78.
+
+
+(/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2aenc.def
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/t2aenc.dfu))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pythontex/pythontex.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fvextra/fvextra.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/upquote/upquote.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/lineno/lineno.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/xstring/xstring.tex))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/pgfopts/pgfopts.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/newfloat/newfloat.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/currfile/currfile.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/usr/local/texlive/2022/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty)
+(/usr/local/texlive/2022/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook.sty
+(/usr/local/texlive/2022/texmf-dist/tex/latex/filehook/filehook-2020.sty))))
+(/usr/local/texlive/2022/texmf-dist/tex/latex/preprint/fullpage.sty)
+(./task1.aux (/usr/local/texlive/2022/texmf-dist/tex/latex/cyrillic/t2acmr.fd))
+(./pythontex-files-task1/task1.pytxmcr)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd)
+(./pythontex-files-task1/py_default_default_2.stdout)
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
+
+[1] (./task1.aux) )
+(see the transcript file for additional information)
+Output written on task1.dvi (1 page, 12620 bytes).
+Transcript written on task1.log.
+Latexmk: Getting log file 'task1.log'
+Latexmk: Examining 'task1.fls'
+Latexmk: Examining 'task1.log'
+Latexmk: Log file says output to 'task1.dvi'
+Latexmk: All targets (task1.dvi) are up-to-date
+

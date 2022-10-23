@@ -1,0 +1,14 @@
+.DS_Store
+.idea/
+.ipynb_checkpoints/
+results/
+taskgen/__pycache__/
+*.log
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.pytxcode
+*.depytx
+*.synctex.gz
+*.pytxcode

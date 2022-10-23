@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{pgf,pgffor}% http://ctan.org/pkg/{pgf,pgffor}
+\usepackage{xfp}
+\usepackage{array}
+\input{random}
+\usepackage{lcg,calc}
+\usepackage[russian]{babel}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+%\restartpythontexsession{\thesection}
+%\usepackage{verbatim}   % for the comment environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{\rmfamily}{}{%
+  \small
+}{%
+}
+
+\newcounter{answercounter}
+
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{solution}%
+{%  
+  \setcounter{answercounter}{1}
+}%
+{%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\parindent}{0pt}
+\usepackage[in]{fullpage}
+
+% параметры:
+% #1 - сам ответ
+% #2 - кол-во баллов за ответ
+% #3 - кол-во знаков после запятой
+% #4 - допустимая погрешность
+\newcommand{\answer}[4]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+\begin{document}
+
+
+% name - название вопроса 
+\begin{problem}[name="Случ. бесп. выборка"]
+Признак $X(k)$ задан на множестве $\Omega$ = \{1, 2, . . . , $6$\} следующей таблицей:
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|} 	\hline 	$k$ & 1 & 2 & 3 & 4 & 5 & 6\\ 	\hline 	$X(k)$ & 6 & 2 & 5 & 4 & 4 & 4 \\
+ 	\hline 	\end{tabular}
+\end{center}
+
+Из $\Omega$ извлекается случайная бесповторная выборка объема 4. Найдите математическое ожидание и дисперсию среднего значения $\overline{X}$ признака $X$ в выборке.\\ 
+Ответ введите с точностью до трех знаков после запятой.\\
+\end{problem}
+
+\begin{solution}
+Математического ожидания $\mathbb E(\overline{X})$ = \answer{4.16667}{0.5}{3}{0.01}\\ 
+Дисперсия $\mathbb Var(\overline{X})$ = \answer{0.14722}{0.5}{3}{0.01}
+\end{solution}
+
+
+\end{document}
