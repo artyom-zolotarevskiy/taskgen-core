@@ -2,7 +2,10 @@
 .idea/
 .ipynb_checkpoints/
 results/
+bank/
+templates/
 taskgen/__pycache__/
+tmp/
 *.log
 *.aux
 *.dvi

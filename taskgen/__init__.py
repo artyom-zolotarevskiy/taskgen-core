@@ -1,7 +1,12 @@
 '''Генератор экзаменационных билетов на базе MikTex'''
+from taskgen.generator import *
+from taskgen.html2pdf import *
 
-__title__ = 'taskgen'
-__version__ = '0.1'
+format = "%(asctime)s: %(message)s"
+logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
+
+__title__ = 'artyom-zolotarevskiy'
+__version__ = '0.3.0'
 __url__ = 'https://github.com/metrazlot/taskgen'
 __author__ = 'Артём Золотаревский'
 __author_email__ = 'artyom@zolotarevskiy.ru'

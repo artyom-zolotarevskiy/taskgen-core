@@ -1,0 +1,15 @@
+pathlib
+cryptography>=3.3.1
+pyyaml>=5.3.1
+cryptography>=3.3.1
+jinja2
+markupsafe
+pyqt5<5.13
+selenium~=4.1.0
+webdriver_manager
+PyPDF2
+pylatexenc
+beautifulsoup4
+tabulate
+configparser
+logging

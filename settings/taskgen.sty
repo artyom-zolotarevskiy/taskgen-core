@@ -1,0 +1,120 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{taskgen}[2023/02/21 Taskgen package v1.0.0]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{lcg,calc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ifthen}
+\usepackage{svg}
+%\usepackage{tabularx}
+%\usepackage{verbatim}   % for the comment environment
+\usepackage{xcolor}
+\usepackage[in]{fullpage}
+%\usepackage{pscyr}
+%\usepackage{SclBookC}
+\setlength{\parindent}{0pt}
+\usepackage{etoolbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\E}{\text{E}}
+\newcommand{\D}{\text{V}\!\text{ar}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\sign}{sign}
+\newcommand{\overbar}[1]{\mkern 1.5mu\overline{\mkern-1.5mu#1\mkern-1.5mu}\mkern 1.5mu}
+\newcommand{\myfrac}[2]{\genfrac{}{}{1.1pt}{}{#1}{#2}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\subs}[1]{{\color{orange}#1}}
+% параметры:
+% #1 - ответ
+\newcommand{\answer}[1]%
+{%
+   \ifthenelse{\isundefined{\setplaceholders}}%
+   {#1}%
+   {
+       \{\#\theanswercounter\}
+   }%
+  \stepcounter{answercounter}
+}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newbool{use_template}
+\newcounter{biletnumber}
+\setcounter{biletnumber}{1}
+\newcommand{\header}{
+  \centerline{\footnotesize{ФЕДЕРАЛЬНОЕ\,\, ГОСУДАРСТВЕННОЕ\,\, ОБРАЗОВАТЕЛЬНОЕ\,\, БЮДЖЕТНОЕ}}
+  \centerline{\footnotesize{УЧРЕЖДЕНИЕ\,\, ВЫСШЕГО\,\, ОБРАЗОВАНИЯ}}
+
+  \centerline{\small{\textbf{<<ФИНАНСВЫЙ\,\,УНИВЕРСИТЕТ\,\,ПРИ\,\,ПРАВИТЕЛЬСТВЕ}}}
+  \centerline{\small{\textbf{РОССИЙСКОЙ\,\,ФЕДЕРАЦИИ>>}}}
+  \centerline{\small{\textbf{(ФИНАНСОВЫЙ УНИВЕРСИТЕТ)}}}
+
+  \hfill \break
+  \centerline{\normalsize{Департамент анализа данных и машинного обучения}}
+  
+  \hfill \break
+  \centerline{\normalsize{\textit{\textbf{Дисциплина: <<Теория вероятностей и математическая статистика>>}}}}
+  \centerline{\small{\textit{Направление подготовки: 01.03.02 <<Прикладная математика и информатика>>}}}
+  \centerline{\small{\textit{Профиль: <<Анализ данных и принятие решений в экономике и финансах>>}}}
+  \centerline{\small{\textit{Факультет информационных технологий и анализа больших данных}}}
+  \centerline{\small{\textit{Форма обучения очная}}}
+  \centerline{\small{\textit{Учебный 2022/2023 год, 3 семестр}}}
+
+  \hfill \break
+  \centerline{\textbf{Билет № \thebiletnumber}}
+}
+\newcommand{\specialcell}[2][l]{%
+  \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+\newcommand{\footer}{
+	\begin{tabular}{lcr}
+	 Подготовил: & \centerline{\includegraphics[scale=0.75]{peryabov.pdf}} & Рябов П.Е.\\\\
+	 \specialcell{Утверждаю: \\
+	  Первый заместитель \\
+	  руководителя департамента \\
+	  Дата 30.10.2022} & \centerline{\includegraphics[scale=0.75]{feklin.pdf}} & Феклин В.Г.
+	\end{tabular}
+}
+\newcounter{taskcounter}
+\setcounter{taskcounter}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{problem}[1][]{%
+  \ifbool{use_template}%
+  {
+    \ifnum\thetaskcounter=1
+	  \header
+    \fi
+    \textbf{\thetaskcounter}. (10)  
+  }%
+  {}%
+}{%
+  \stepcounter{taskcounter}
+}
+
+\newcounter{answercounter}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% if you want to see the solution
+%\newcommand{\hidesolution}{show them}
+%\newcommand{\setplaceholders}{}
+\newenvironment{solution}%
+{%
+  \setcounter{answercounter}{1}
+}%
+{%
+  \ifbool{use_template}%
+  {
+    \ifnum\thetaskcounter=7
+	  \footer
+  	  \stepcounter{biletnumber}
+	  \setcounter{taskcounter}{1}
+    \fi  
+  }%
+  {}%
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareOption{use_template}{\booltrue{use_template}}
+\DeclareOption*{\PackageWarning{taskgen}{Unknown ‘\CurrentOption’}}
+\ProcessOptions\relax
+
+\endinput

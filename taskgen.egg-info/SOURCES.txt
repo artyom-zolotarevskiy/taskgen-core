@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+taskgen/__init__.py
+taskgen/generator.py
+taskgen/html2pdf.py
+taskgen.egg-info/PKG-INFO
+taskgen.egg-info/SOURCES.txt
+taskgen.egg-info/dependency_links.txt
+taskgen.egg-info/requires.txt
+taskgen.egg-info/top_level.txt
