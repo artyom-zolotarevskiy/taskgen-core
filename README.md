@@ -28,8 +28,7 @@ git clone git@github.com:artyom-zolotarevskiy/taskgen.git
 
 ```
 cd taskgen
-pip install -r requirements.txt
-pip install -e .
+python3 -m pip install -e .
 ```
 
 ### 3. Установить пакет TeX в систему MiKTex
