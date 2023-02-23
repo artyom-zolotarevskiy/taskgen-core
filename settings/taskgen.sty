@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{taskgen}[2023/02/21 Taskgen package v1.0.0]
+\ProvidesPackage{taskgen}[2023/02/23 Taskgen package v0.3.0]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[russian]{babel}
 \usepackage{graphicx}
@@ -43,38 +43,10 @@
 \newcounter{biletnumber}
 \setcounter{biletnumber}{1}
 \newcommand{\header}{
-  \centerline{\footnotesize{ФЕДЕРАЛЬНОЕ\,\, ГОСУДАРСТВЕННОЕ\,\, ОБРАЗОВАТЕЛЬНОЕ\,\, БЮДЖЕТНОЕ}}
-  \centerline{\footnotesize{УЧРЕЖДЕНИЕ\,\, ВЫСШЕГО\,\, ОБРАЗОВАНИЯ}}
-
-  \centerline{\small{\textbf{<<ФИНАНСВЫЙ\,\,УНИВЕРСИТЕТ\,\,ПРИ\,\,ПРАВИТЕЛЬСТВЕ}}}
-  \centerline{\small{\textbf{РОССИЙСКОЙ\,\,ФЕДЕРАЦИИ>>}}}
-  \centerline{\small{\textbf{(ФИНАНСОВЫЙ УНИВЕРСИТЕТ)}}}
-
-  \hfill \break
-  \centerline{\normalsize{Департамент анализа данных и машинного обучения}}
-  
-  \hfill \break
-  \centerline{\normalsize{\textit{\textbf{Дисциплина: <<Теория вероятностей и математическая статистика>>}}}}
-  \centerline{\small{\textit{Направление подготовки: 01.03.02 <<Прикладная математика и информатика>>}}}
-  \centerline{\small{\textit{Профиль: <<Анализ данных и принятие решений в экономике и финансах>>}}}
-  \centerline{\small{\textit{Факультет информационных технологий и анализа больших данных}}}
-  \centerline{\small{\textit{Форма обучения очная}}}
-  \centerline{\small{\textit{Учебный 2022/2023 год, 3 семестр}}}
-
-  \hfill \break
   \centerline{\textbf{Билет № \thebiletnumber}}
 }
 \newcommand{\specialcell}[2][l]{%
   \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
-\newcommand{\footer}{
-	\begin{tabular}{lcr}
-	 Подготовил: & \centerline{\includegraphics[scale=0.75]{peryabov.pdf}} & Рябов П.Е.\\\\
-	 \specialcell{Утверждаю: \\
-	  Первый заместитель \\
-	  руководителя департамента \\
-	  Дата 30.10.2022} & \centerline{\includegraphics[scale=0.75]{feklin.pdf}} & Феклин В.Г.
-	\end{tabular}
-}
 \newcounter{taskcounter}
 \setcounter{taskcounter}{1}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
