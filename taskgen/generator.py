@@ -346,8 +346,8 @@ def make_tex_variant(variant_number, structure):
     logging.info('Создаем билет № ' + str(variant_number) + ' в TeX формате...')
     # тело билета
     variant_src = r'\documentclass[11pt]{article}' + '\n'
-    variant_src += r'\usepackage{taskgen}' + '\n' # [use_template]
-    variant_src += r'\begin{document}' + '\n'
+    variant_src += r'\usepackage[use_template]{taskgen}' + '\n'
+    variant_src += r'\begin{document}' + '\n\n\setcounter{biletnumber}{' + str(variant_number) + '}\n'
     # обходим каждый вопрос
     for substitution_file in structure:
         # добавляем задачу в тело билета
@@ -378,6 +378,11 @@ def make_html_variant(variant_number, structure, with_solution=True):
     general_template_file = os.path.join(template_folder, 'template.html')
     with open(general_template_file, 'r', encoding='utf-8') as file:
         variant = file.read()
+
+    mathjaxcommands_file = os.path.join(os.getcwd(), 'settings', 'mathjaxcommands.tex')
+    with open(mathjaxcommands_file, 'r', encoding='utf-8') as file:
+        mathjaxcommands = file.read()
+    variant = variant.replace('${mathjaxcommands}', mathjaxcommands)
 
     # берем файл шаблона варианта
     variant_template_file = os.path.join(template_folder, 'variant.html')
@@ -473,13 +478,18 @@ def make_moodle_variant(variant_number, structure):
     with open(general_template_file, 'r', encoding='utf-8') as file:
         variant = file.read()
 
+    mathjaxcommands_file = os.path.join(os.getcwd(), 'settings', 'mathjaxcommands.tex')
+    with open(mathjaxcommands_file, 'r', encoding='utf-8') as file:
+        mathjaxcommands = file.read()
+
     # берем файл шаблона варианта
     variant_template_file = os.path.join(template_folder, 'variant.xml')
     with open(variant_template_file, 'r', encoding='utf-8') as file:
         variant = variant.replace('${body}', file.read())
+        variant = variant.replace('${mathjaxcommands}', mathjaxcommands)
 
     # подставляем номер билета
-    variant = variant.replace('${variant_number}', str(variant_number))
+    variant = variant.replace('${variant_name}', 'Билет № ' + str(variant_number))
 
     # формируем содержимое билета
     # берем шаблон задачи
@@ -494,6 +504,8 @@ def make_moodle_variant(variant_number, structure):
 
     # обходим каждый вопрос
     variant_src = ''
+    answers_xml = ''
+    last_answer_index = 0
     for problem_number, substitution_tex_file in enumerate(structure):
         # путь к соответствующем html файлу условия
         problem_html_file = os.path.join(os.path.dirname(os.path.dirname(substitution_tex_file)),
@@ -515,16 +527,37 @@ def make_moodle_variant(variant_number, structure):
         variant_src += problem_template
         variant_src = variant_src.replace('${problem_number}', str(problem_number + 1))
         variant_src = variant_src.replace('${problem_max_score}', '10')
+
+        # добавляем секцию для ввода ответов
+        # получаем численные ответы
+        # через регулярные выражения находим все значения по шаблону \answer {.*}\
+        answers = list(map(lambda answer: answer.replace(r',\!', '.'), re.findall(r'\\answer {(.*?)}\\', solution_html_src)))
+        if len(answers) == 0:
+            print('Не найдены ответы для задачи № ' + str(problem_number + 1) +
+                  ' в варианте № ' + str(variant_number) + '!')
+        # заменяем численные ответы на placeholder
+        for answer in answers:
+            solution_html_src = solution_html_src.replace(r'\(\answer {' +
+                                                          answer.replace('.', r',\!') + '}\)', '{#x' + str(last_answer_index + 1) + '}')
+            answers_xml += answer_template
+            answers_xml = answers_xml.replace('${partindex}', str(last_answer_index))
+            answers_xml = answers_xml.replace('${placeholder}', 'x' + str(last_answer_index + 1))
+            answers_xml = answers_xml.replace('${answermark}', str(1))
+            answers_xml = answers_xml.replace('${answer}', answer)
+            # рассчитываем, сколько указано знаков в ответе после запятой, что определить допустимую ошибку
+            count_signs = len(str(answer).split('.')[1])
+            answers_xml = answers_xml.replace('${correctness}',
+                                              '0' + ('.' + abs(count_signs - 3) * '0' + '1' if count_signs > 0 else ''))
+            last_answer_index += 1
+
+        problem_html_src += solution_html_src
+
         variant_src = variant_src.replace('${problem_src}', problem_html_src)
 
-        # добавляем решение к задаче
-        variant_src += answer_template
-        variant_src = variant_src.replace('${solution_src}', solution_html_src)
     # подставляем содержимое билета
     variant = variant.replace('${variant_src}', variant_src)
-
-    # подставляем сегодняшнюю дату
-    variant = variant.replace('${variant_date}', datetime.now().strftime('%d.%m.%Y'))
+    # подставляем ответы
+    variant = variant.replace('${answers}', answers_xml)
 
     # имя итого файла
     dst_file_name = 'variant-' + str(variant_number)
@@ -547,8 +580,9 @@ def merge_tex_variants():
         os.makedirs(results_directory)
 
     # список всех файлов вариантов
-    variants_files_list = glob.glob(os.path.join(results_directory, 'variant-*.tex'))
-    merged_tex_file = merge_tex(variants_files_list, use_template=False)
+    variants_files_list = sorted(glob.glob(os.path.join(results_directory, 'variant-*.tex')),
+         key=lambda filename: int(os.path.splitext(os.path.basename(filename))[0].replace('variant-', '')))
+    merged_tex_file = merge_tex(variants_files_list, use_template=True)
 
     # сохраняем объединенный файл вариантов
     with open(os.path.join(results_directory, 'variants_merged.tex'), 'w', encoding='utf-8') as file:
@@ -570,6 +604,16 @@ def merge_html_variants(with_solution=True):
     else:
         variants_files_list = glob.glob(os.path.join(results_directory, 'variant-*-only-problem.html'))
 
+    variants_files_list = sorted(variants_files_list,
+        key=lambda filename: int(
+            os.path.splitext(
+                os.path.basename(filename))[0]
+                .replace('variant-', '')
+                .replace('-with-solution', '')
+                .replace('-only-problem', '')
+        )
+    )
+
     # cортируем в порядке возрастания вариантов
     variants_files_list = sorted(variants_files_list)
 
@@ -578,6 +622,11 @@ def merge_html_variants(with_solution=True):
     general_template_file = os.path.join(template_folder, 'template.html')
     with open(general_template_file, 'r', encoding='utf-8') as file:
         merged_html_file = file.read()
+
+    mathjaxcommands_file = os.path.join(os.getcwd(), 'settings', 'mathjaxcommands.tex')
+    with open(mathjaxcommands_file, 'r', encoding='utf-8') as file:
+        mathjaxcommands = file.read()
+    merged_html_file = merged_html_file.replace('${mathjaxcommands}', mathjaxcommands)
 
     # получаем содержимое всех вариантов
     acc_html = ''
@@ -597,11 +646,6 @@ def merge_html_variants(with_solution=True):
     merged_html_file = merged_html_file.replace('${body}', acc_html)
 
     # сохраняем объединенный файл вариантов
-    if with_solution:
-        variants_files_list = glob.glob(os.path.join(results_directory, 'variant-*-with-solution.html'))
-    else:
-        variants_files_list = glob.glob(os.path.join(results_directory, 'variant-*-only-problem.html'))
-
     with open(os.path.join(results_directory,
                            'variants_merged_' +
                            ('with_solution' if with_solution else 'only_problem') +
@@ -610,6 +654,48 @@ def merge_html_variants(with_solution=True):
 
     logging.info('Объединенный файл вариантов в HTML формате ' +
                  ('с решениями' if with_solution else 'без решений') + ' создан!')
+
+def merge_moodle_variants():
+    '''
+    Объединяет файлы вариантов в Moodle XML формате в один "variants_merged.xml" файл.
+    '''
+    results_directory = os.path.join(os.getcwd(), 'results', 'moodle')
+    if not os.path.exists(results_directory):
+        os.makedirs(results_directory)
+
+    # список всех файлов вариантов
+    variants_files_list = sorted(glob.glob(os.path.join(results_directory, 'variant-*.xml')),
+         key=lambda filename: int(os.path.splitext(os.path.basename(filename))[0].replace('variant-', '')))
+
+    # cортируем в порядке возрастания вариантов
+    variants_files_list = sorted(variants_files_list)
+
+    # берем файл общего шаблона html файла
+    template_folder = os.path.join(os.getcwd(), 'templates', 'moodle')
+    general_template_file = os.path.join(template_folder, 'template.xml')
+    with open(general_template_file, 'r', encoding='utf-8') as file:
+        merged_xml_file = file.read()
+
+    # получаем содержимое всех вариантов
+    acc_xml = ''
+    # обходим каждый файл варианта
+    for variant_file in variants_files_list:
+        with open(variant_file, 'r', encoding='utf-8') as file:
+            variant_html = file.read()
+            # получаем содержимое данного варианта
+            variant_html = variant_html.replace('<?xml version="1.0" encoding="UTF-8"?>', '')
+            variant_html = variant_html.replace('<quiz>', '')
+            variant_html = variant_html.replace('</quiz>', '')
+
+            acc_xml += variant_html + '\n\n'
+    # подставляем содержимое билета
+    merged_xml_file = merged_xml_file.replace('${body}', acc_xml)
+
+    # сохраняем объединенный файл вариантов
+    with open(os.path.join(results_directory, 'variants_merged.xml'), 'w', encoding='utf-8') as file:
+        file.write(merged_xml_file)
+
+    logging.info('Объединенный файл вариантов в Moodle XML формате создан!')
 
 
 def merge_all_substitutions(folder='./bank'):
@@ -632,8 +718,8 @@ def merge_all_substitutions(folder='./bank'):
                                                                    'substitution_*.tex')))
                 structure += substitutions_list
 
-    make_tex_variant(variant_number='all-substitutions', structure=structure)
-    make_html_variant(variant_number='all-substitutions', structure=structure)
+    make_tex_variant(variant_number='all-substitutions-merged', structure=structure)
+    make_html_variant(variant_number='all-substitutions-merged', structure=structure)
 
     logging.info('Объединенные файлы всех подстановок в TeX и HTML форматах созданы!')
 
@@ -645,9 +731,12 @@ def remove_substitutions(folder='./bank'):
     tasks_folders_list = map(lambda path: os.path.dirname(path),
                              glob.glob(os.path.join(folder, '**', 'parametrizator.ipynb'), recursive=True))
     for task_folder in tasks_folders_list:
-        shutil.rmtree(os.path.join(task_folder, 'substitutions'))
-        shutil.rmtree(os.path.join(task_folder, 'data'))
-        shutil.rmtree(os.path.join(task_folder, 'tmp'))
+        if os.path.exists(os.path.join(task_folder, 'substitutions')):
+            shutil.rmtree(os.path.join(task_folder, 'substitutions'))
+        if os.path.exists(os.path.join(task_folder, 'data')):
+            shutil.rmtree(os.path.join(task_folder, 'data'))
+        if os.path.exists(os.path.join(task_folder, 'tmp')):
+            shutil.rmtree(os.path.join(task_folder, 'tmp'))
 
     logging.info('Папки "substitutions", "data" и "tmp" удалены для всех задач!')
 
@@ -670,6 +759,7 @@ def make_variants(folder='./bank', size=1, start=1):
         make_tex_variant(variant_number, subs_lst)
         make_html_variant(variant_number, subs_lst, with_solution=True)
         make_html_variant(variant_number, subs_lst, with_solution=False)
+        make_moodle_variant(variant_number, subs_lst)
 
     # создаем объединенный файл вариантов в формате TeX
     merge_tex_variants()
@@ -677,6 +767,9 @@ def make_variants(folder='./bank', size=1, start=1):
     # создаем объединенный файл вариантов в формате HTML
     merge_html_variants(with_solution=True)
     merge_html_variants(with_solution=False)
+
+    # создаем объединенный файл вариантов в формате Moodle XML
+    merge_moodle_variants()
 
     logging.info('Файлы вариантов сгенерированы!')
 
@@ -687,19 +780,6 @@ def variants2pdf():
     html2pdf(os.path.join(os.getcwd(), 'results', 'html'), \
              os.path.join(os.getcwd(), 'results', 'pdf'), in_one_page=True)
 
-
-# конвертируем html файлы вариантов в moodle_xml
-def variants2moodle():
-    '''
-    Конвертирует файлы вариантов в формат Moodle XML.
-    '''
-    # заменить ответы на знаки подстановок
-    # распарсить ответы из latex файла
-    # изображения включать как base64
-    # сделать версии html вариантов без ответов
-
-
-    pass
 
 def tex2html(sourcepath, targetpath):
     '''
@@ -865,10 +945,7 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
                 return cur_line
             else:
                 continue
-        #if start_line < len(html_lines):
         return cur_line
-        #else:
-        #    return html_lines[-1]
 
     def extract_html(first_env_startline, second_env_startline=None):
         if first_env_startline is None:
