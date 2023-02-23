@@ -39,7 +39,7 @@ def send_devtools(driver, cmd, params={}):
 
 def latex_is_loaded(driver):
     #print(arg)
-    state = driver.execute_script('return window.latexIsLoaded;')
+    state = driver.execute_script('return window.MathJax.config.startup.typeset;')
     #print('latex_state=%s' % state)
     return state == True
 
@@ -57,12 +57,7 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
-    for filename in sorted(os.listdir(source),
-                           key=lambda filename: int(''.join(filter(str.isdigit, filename))) if filename.endswith(
-                                   '.html') else False):
-        if not filename.endswith('.html'):
-            continue
-
+    for filename in sorted(filter(lambda filename: filename.endswith('.html') and not filename.endswith('merged.html'), os.listdir(source))):
         # открываем html файл
         print('Открываем файл:', filename)
         driver.get(f'file://{os.path.join(source, filename)}')
@@ -73,8 +68,6 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
         element = WebDriverWait(driver, 10).until(ec.presence_of_element_located((By.TAG_NAME, 'body')))
 
         # дожидаемся полной инициализации LaTex на странице
-        driver.execute_script('window.latexIsLoaded = false;')
-        driver.execute_script('window.MathJax.Hub.Register.StartupHook("End",function () { window.latexIsLoaded = true; });')
         WebDriverWait(driver, 10).until(latex_is_loaded)
 
         # получаем pdf
@@ -88,7 +81,7 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
 
         if in_one_page:
             print('Подбираем коэффициент масштабирования...')
-            while 0 < print_options['scale'] < 2:
+            while 0.125 <= print_options['scale'] <= 1.75:
                 result = send_devtools(driver, "Page.printToPDF", print_options)
                 result = base64.b64decode(result['data'])
 
@@ -124,11 +117,7 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
 
     # объединяем полученные файлы в один
     mergedObject = PdfFileMerger()
-    for filename in sorted(os.listdir(output),
-                           key=lambda filename: int(''.join(filter(str.isdigit, filename))) if filename.endswith(
-                                   '.pdf') else False):
-        if not filename.endswith('.pdf'):
-            continue
+    for filename in sorted(filter(lambda filename: filename.endswith('.pdf') and not filename.endswith('merged.pdf'), os.listdir(output))):
         mergedObject.append(PdfFileReader(os.path.join(output, filename)))
-    mergedObject.write(os.path.join(os.path.dirname(output), os.path.basename(output) + '_merged.pdf'))
+    mergedObject.write(os.path.join(output, 'variants_merged.pdf'))
     print('Все pdf файлы из директории', output, 'объединены в единый файл!')
