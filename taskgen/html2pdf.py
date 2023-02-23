@@ -57,7 +57,7 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
-    for filename in sorted(filter(lambda filename: filename.endswith('.html') and not filename.endswith('merged.html'), os.listdir(source))):
+    for filename in sorted(filter(lambda filename: filename.endswith('.html') and 'merged' not in filename, os.listdir(source))):
         # открываем html файл
         print('Открываем файл:', filename)
         driver.get(f'file://{os.path.join(source, filename)}')
@@ -115,9 +115,30 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
     driver.close()
     print('Все html файлы в директории', source, 'сконвертированы в pdf!')
 
-    # объединяем полученные файлы в один
+    # объединяем полученные файлы вариантов с решениями в один
     mergedObject = PdfFileMerger()
-    for filename in sorted(filter(lambda filename: filename.endswith('.pdf') and not filename.endswith('merged.pdf'), os.listdir(output))):
+    for filename in sorted(
+            filter(
+                lambda filename: filename.endswith('.pdf') and
+                                 not filename.endswith('merged.pdf') and
+                                 not filename.endswith('-only-problem.pdf'),
+                os.listdir(output)
+            )
+    ):
         mergedObject.append(PdfFileReader(os.path.join(output, filename)))
-    mergedObject.write(os.path.join(output, 'variants_merged.pdf'))
-    print('Все pdf файлы из директории', output, 'объединены в единый файл!')
+    mergedObject.write(os.path.join(output, 'variants_with_solution_merged.pdf'))
+
+    # объединяем полученные файлы вариантов без решений в один
+    mergedObject = PdfFileMerger()
+    for filename in sorted(
+            filter(
+                lambda filename: filename.endswith('.pdf') and
+                                 not filename.endswith('merged.pdf') and
+                                 not filename.endswith('-with-solution.pdf'),
+                os.listdir(output)
+            )
+    ):
+        mergedObject.append(PdfFileReader(os.path.join(output, filename)))
+    mergedObject.write(os.path.join(output, 'variants_only_problem_merged.pdf'))
+
+    print('Все pdf файлы из директории', output, 'объединены!')

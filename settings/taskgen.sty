@@ -71,17 +71,22 @@
 \newenvironment{solution}%
 {%
   \setcounter{answercounter}{1}
+  \ifbool{use_template}%
+  {
+  	\textbf{Решение: }  
+  }%
+  {}%
 }%
 {%
   \ifbool{use_template}%
   {
     \ifnum\thetaskcounter=7
-	  \footer
   	  \stepcounter{biletnumber}
 	  \setcounter{taskcounter}{1}
     \fi  
   }%
   {}%
+  \\
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
