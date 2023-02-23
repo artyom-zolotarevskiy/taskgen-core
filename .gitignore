@@ -6,6 +6,7 @@ bank/
 templates/
 taskgen/__pycache__/
 tmp/
+taskgen.egg-info/
 *.log
 *.aux
 *.dvi
