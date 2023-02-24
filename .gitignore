@@ -1,9 +1,11 @@
 .DS_Store
 .idea/
 .ipynb_checkpoints/
+bank/**/data
+bank/**/substitutions
+bank-private/
 results/
-bank/
-templates/
+templates/special
 taskgen/__pycache__/
 tmp/
 build/

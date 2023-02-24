@@ -16,7 +16,7 @@ def parse_requirements(filename):
 
 
 setup(name='taskgen',
-      version='0.3.1',
+      version='0.3.2',
       author='Артём Золотаревский',
       author_email='artyom@zolotarevskiy.ru',
       description='Генератор экзаменационных билетов на базе MikTex',

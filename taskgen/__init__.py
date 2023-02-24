@@ -6,7 +6,7 @@ format = "%(asctime)s: %(message)s"
 logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
 
 __title__ = 'artyom-zolotarevskiy'
-__version__ = '0.3.1'
+__version__ = '0.3.2'
 __url__ = 'https://github.com/artyom-zolotarevskiy/taskgen'
 __author__ = 'Артём Золотаревский'
 __author_email__ = 'artyom@zolotarevskiy.ru'
