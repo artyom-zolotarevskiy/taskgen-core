@@ -284,7 +284,7 @@ def gen_bank(n=1, folder=config.get('GENERAL', 'bank_folder'), multiprocessing=T
     # подставляем параметры в tex шаблон
     gen_subs(n, folder)
     # конвертируем в html оптимизированным способом
-    tex_substitutions2html_optimized(folder, multiprocessing)
+    tex_substitutions2html_optimized(folder)
 
 
 def get_omega_folders(folder):
@@ -914,7 +914,7 @@ def tex_substitutions2html(multiprocessing=True):
             tex2html(sourcepath, targetpath)
     logging.info('Файлы вариантов сконвертированы в HTML!')
 
-def mergedTex2HtmlWithSlicing(merged_tex_file, second_param):
+def mergedTex2HtmlWithSlicing(merged_tex_file):
     '''
     Конвертирует объединенный TeX файл в HTML.
     После конвертации разбивает его на множество мелких html файлов, из которых он состоит.
@@ -1047,22 +1047,18 @@ def mergedTex2HtmlWithSlicing(merged_tex_file, second_param):
             file.write(solution)
 
 
-def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder'), multiprocessing=True):
+def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder')):
     '''
     Конвертирует TeX файлы подстановок в HTML оптимизированным способом за счет использования merged файла.
     Благодаря этому множество файлов подстановок данной задачи конвертируются в html за 1 проход.
     '''
     folder = os.path.abspath(os.path.join(folder))
-    src_lst = list(map(lambda path: (path, ''), glob.glob(
+    src_lst = glob.glob(
         os.path.join(folder, '**', 'substitutions', 'tex', 'substitutions_merged.tex'),
         recursive=True
-    )))
-    if multiprocessing:
-        with Pool(int(config.get('GENERAL', 'converter_threads_count'))) as p:
-            p.starmap(mergedTex2HtmlWithSlicing, src_lst)
-    else:
-        for file_path in src_lst:
-            mergedTex2HtmlWithSlicing(file_path[0])
+    )
+    for file_path in src_lst:
+        mergedTex2HtmlWithSlicing(file_path)
     logging.info('Файлы подстановок сконвертированы в HTML!')
 
 
