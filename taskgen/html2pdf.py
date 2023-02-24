@@ -79,9 +79,9 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
             'scale': 1,
         }
 
-        if in_one_page:
+        if in_one_page and 'with-solution' not in filename:
             print('Подбираем коэффициент масштабирования...')
-            while 0.125 <= print_options['scale'] <= 1.75:
+            while 0.125 <= print_options['scale'] <= 1.975:
                 result = send_devtools(driver, "Page.printToPDF", print_options)
                 result = base64.b64decode(result['data'])
 

@@ -1,34 +1,21 @@
 Task Generator
 ===========
 
-Генератор экзаменационных билетов на базе MikTex и Python.
+Генератор экзаменационных билетов на базе MikTex и Anaconda.
 
-Последнее обновление кодовой базы: 23.02.2023.
+Язык верстки - LaTeX, а параметризация осуществляется через Jupyter Notebook.
+Результатом работы является уникальный банк задач в форматах TeX, HTML и Moodle XML.
+
+Последнее обновление кодовой базы: 24.02.2023.
 
 По всем вопросам: artyom@zolotarevskiy.ru.
 
-Особенности
-----------
-- Верстка задач осуществляется на языке LaTeX, а параметризация на Python в Jupyter Notebook.
-- Результатом работы являются экзаменационные билеты в форматах TeX, HTML и Moodle XML.
-
 Установка
 ----------
-
-На компьютере должен быть установлен MiKTeX и Jupyter Notebook. 
-
-### 1. Скачать данный репозиторий
-В виде zip архива или посредством git'а:
+Выполните следующую команду для скачивания и установки актуальной версии ядра пакета.
 
 ```
-git clone git@github.com:artyom-zolotarevskiy/taskgen.git
-```
-
-### 2. Установить пакет Python
-
-```
-cd taskgen
-python setup.py install
+python -m pip install --force-reinstall --no-deps git+https://github.com/artyom-zolotarevskiy/taskgen.git
 ```
 
 

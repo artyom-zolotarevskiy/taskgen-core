@@ -1,0 +1,5 @@
+<div class="problem">
+  <strong><span class='problem_number'>${problem_number}</span>. (${problem_max_score})</strong>
+  ${problem_src}
+</div>
+<br>
