@@ -28,19 +28,8 @@ git clone git@github.com:artyom-zolotarevskiy/taskgen.git
 
 ```
 cd taskgen
-python3 -m pip install -e .
+python setup.py install
 ```
-
-### 3. Установить пакет TeX в систему MiKTex
-Пакет для установки расположен по пути: "./settings/taskgen.sty"
-
-Пример терминальных команд для установки в MacOS:
-```
-sudo -i
-cp ./settings/taskgen.sty /usr/local/texlive/texmf-local/tex/latex/taskgen.sty
-texhash
-```
-
 
 
 Использование
