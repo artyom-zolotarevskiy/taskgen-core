@@ -131,7 +131,7 @@ def gen_subs_data(task_folder, n):
     parametrizer_script += 'import json\n'
     parametrizer_script += 'parametrizer_result = []\n'
     parametrizer_script += f"for i in range({n}):\n\tparametrizer_result.append({config.get('GENERAL', 'parameterizer_function_name')}())\n"
-    parametrizer_script += "with open('" + os.path.join(data_directory,
+    parametrizer_script += "with open(r'" + os.path.join(data_directory,
         'data.json') + "', 'w', encoding='utf-8') as file:\n\tjson.dump(parametrizer_result, file)\n"
 
     # сохраням код параметризации в отдельный .py файл
@@ -142,10 +142,6 @@ def gen_subs_data(task_folder, n):
     os.system('python "' + os.path.join(data_directory, 'parametrizator.py') + '"')
 
     logging.info('"' + task_folder + '" json файл с данными для подстановок создан')
-
-    # читаем json с данными
-    # with open(os.path.join(task_folder, 'data.json'), 'r', encoding='utf-8') as file:
-    #    return json.load(file)
 
 
 def get_tex_body(file):
@@ -201,6 +197,12 @@ def gen_subs(n=1, folder='bank'):
         # очищаем прошлые подстановки
         for file in glob.glob(os.path.join(substitutions_directory, 'substitution_*.*')):
             os.remove(file)
+        # удаляем прошлый пакет taskgen.sty
+        dst_taskgen_sty_path = os.path.join(substitutions_directory, 'taskgen.sty')
+        if os.path.exists(dst_taskgen_sty_path):
+            os.remove(dst_taskgen_sty_path)
+        # копируем taskgen.sty из настроек в данную директорию
+        shutil.copyfile(os.path.join(os.getcwd(), 'settings', 'taskgen.sty'), dst_taskgen_sty_path)
         # читаем файл с данными для подстановок
         with open(os.path.join(task_folder, 'data', 'data.json'), 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -219,7 +221,7 @@ def gen_subs(n=1, folder='bank'):
     logging.info('Генерация TeX файлов с подстановками завершена!')
 
 
-def gen_bank(n=1, folder='bank'):
+def gen_bank(n=1, folder=''):
     '''
     Cоздает n подстановок для каждой задачи из папки folder.
 
@@ -237,8 +239,13 @@ def gen_bank(n=1, folder='bank'):
 
     :param n: кол-во создаваемых подстановок для каждой задачи
     :param folder: папка, для задач которой будут генерироваться подстановки
-    :return: файлы подстановок в tex и html форматах.
+
+    Результатом работы являются файлы подстановок в TeX, HTML и Moodle XML форматах.
     '''
+    if folder == '':
+        folder = os.path.join(os.getcwd(), 'bank')
+    else:
+        folder = os.path.abspath(folder)
     # параметризуем задачи, получаем параметры для подстановок
     gen_data(n, folder)
     # подставляем параметры в tex шаблон
@@ -360,6 +367,10 @@ def make_tex_variant(variant_number, structure):
         os.makedirs(results_directory)
     with open(os.path.join(results_directory, f'variant-{str(variant_number)}.tex'), 'w', encoding='utf-8') as file:
         file.write(variant_src)
+    # копируем taskgen.sty из настроек в данную директорию
+    dst_taskgen_sty_path = os.path.join(results_directory, 'taskgen.sty')
+    if not os.path.exists(dst_taskgen_sty_path):
+        shutil.copyfile(os.path.join(os.getcwd(), 'settings', 'taskgen.sty'), dst_taskgen_sty_path)
     logging.info('Билет № ' + str(variant_number) + ' в TeX формате создан!')
 
 def make_html_variant(variant_number, structure, with_solution=True):
@@ -580,8 +591,9 @@ def merge_tex_variants():
         os.makedirs(results_directory)
 
     # список всех файлов вариантов
-    variants_files_list = sorted(glob.glob(os.path.join(results_directory, 'variant-*.tex')),
-         key=lambda filename: int(os.path.splitext(os.path.basename(filename))[0].replace('variant-', '')))
+    variants_files_list = sorted(filter(lambda filename: 'merged' not in filename,
+        glob.glob(os.path.join(results_directory, 'variant-*.tex'))),
+        key=lambda filename: int(os.path.splitext(os.path.basename(filename))[0].replace('variant-', '')))
     merged_tex_file = merge_tex(variants_files_list, use_template=True)
 
     # сохраняем объединенный файл вариантов
@@ -604,7 +616,8 @@ def merge_html_variants(with_solution=True):
     else:
         variants_files_list = glob.glob(os.path.join(results_directory, 'variant-*-only-problem.html'))
 
-    variants_files_list = sorted(variants_files_list,
+    variants_files_list = sorted(filter(lambda filename: 'merged' not in filename,
+        variants_files_list),
         key=lambda filename: int(
             os.path.splitext(
                 os.path.basename(filename))[0]
@@ -784,6 +797,13 @@ def variants2pdf():
 def tex2html(sourcepath, targetpath):
     '''
     Конвертирует TeX файл в HTML. Использует make4ht.
+
+    Для конвертации требуются конфигурационные файлы make4ht, которые должны лежать в папке "./settings"
+    относительно корня пакета.
+
+    Данная функция ищет папку "settings" в родительских папках относительно активной директории исполняемого файла
+    до 5 уровней вложенности вверх.
+
     make4ht - build system for TeX4ht
     Usage:
     make4ht [options] filename ["tex4ht.sty op." "tex4ht op."
@@ -810,17 +830,33 @@ def tex2html(sourcepath, targetpath):
     sourcepath = os.path.abspath(sourcepath)
     targetpath = os.path.abspath(targetpath)
 
-    # заходим в корневой каталог
-    os.chdir(os.path.abspath(os.path.dirname(os.path.dirname(__file__))))
+    initial_path = os.getcwd()
+
+    # ищем папку "settings" в родительских директориях
+    settings_folder = initial_path
+    flag = False
+    for i in range(6):
+        directory_files = glob.glob(os.path.join(settings_folder, '*'))
+        if len(list(filter(lambda path: os.path.basename(path) == 'settings', directory_files))) > 0:
+            flag = True
+            settings_folder = os.path.join(settings_folder, 'settings')
+            break
+        else:
+            settings_folder = os.path.dirname(settings_folder)
+    if not flag:
+        print('Не удалось найти папку с настройками конвертации!')
+        return False
 
     # создаем временный каталог для этой задачи, копируем туда конфиги, а затем переходим в него
     tempdir = os.path.join(os.getcwd(), 'tmp', str(binascii.crc32(targetpath.encode('utf8'))))
     if not os.path.exists(tempdir):
         os.makedirs(tempdir)
-    shutil.copyfile(os.path.join(os.getcwd(), 'settings', 'ht5mjlatex.cfg'),
+    shutil.copyfile(os.path.join(settings_folder, 'ht5mjlatex.cfg'),
                     os.path.join(tempdir, 'ht5mjlatex.cfg'))
-    shutil.copyfile(os.path.join(os.getcwd(), 'settings', 'mathjaxcommands.tex'),
+    shutil.copyfile(os.path.join(settings_folder, 'mathjaxcommands.tex'),
                     os.path.join(tempdir, 'mathjaxcommands.tex'))
+    shutil.copyfile(os.path.join(settings_folder, 'taskgen.sty'),
+                    os.path.join(tempdir, 'taskgen.sty'))
     os.chdir(tempdir)
 
     logging.info('Конвертируем файл ' + sourcepath + '...')
@@ -830,6 +866,8 @@ def tex2html(sourcepath, targetpath):
     with subp.Popen(args, stdout=subp.PIPE) as proc:
         output = proc.stdout.read().decode('utf-8', 'ignore')
     print(output)
+
+    os.chdir(initial_path)
 
     # добавляем в html файл параметры для красивого отображения скобочек
     with open(targetpath, 'r', encoding='utf-8') as file:
@@ -843,6 +881,8 @@ def tex2html(sourcepath, targetpath):
     logging.info('Удаляем временные файлы для ' + sourcepath + '...')
     # удаляем временную директорию
     shutil.rmtree(tempdir)
+
+    return True
 
 def tex_substitutions2html():
     '''
@@ -934,7 +974,7 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
         source_html = file.read()
 
     # список строк, отраженных в html файле
-    html_lines = list(map(int, re.findall('<!-- l. (.*?) -->', source_html)))
+    html_lines = list(map(int, re.findall(r'<!-- l. (.*?) -->', source_html)))
     if len(html_lines) == 0:
         print(merged_html_file + ' - не найдено html данных задач!')
         return
@@ -1048,6 +1088,24 @@ def show(subs_data={}, template_name='template.tex'):
     results_directory = os.path.join(os.getcwd(), 'tmp')
     if not os.path.exists(results_directory):
         os.makedirs(results_directory)
+    # копируем taskgen.sty из настроек в данную директорию
+    dst_taskgen_sty_path = os.path.join(results_directory, 'taskgen.sty')
+    if not os.path.exists(dst_taskgen_sty_path):
+        shutil.copyfile(
+            os.path.join(
+                os.path.dirname(
+                    os.path.dirname(
+                        os.path.dirname(
+                            os.path.dirname(
+                                os.getcwd()
+                            )
+                        )
+                    )
+                ),
+                'settings',
+                'taskgen.sty'
+            ),
+            dst_taskgen_sty_path)
     # подставляем переданные значения
     logging.info(f'Подставляем переданные значения в шаблон "{template_name}"...')
     subs_file_name = datetime.now().strftime("subs_%d.%m.%Y_%H-%M-%S.tex")
@@ -1055,12 +1113,11 @@ def show(subs_data={}, template_name='template.tex'):
     latex_subs(template_name, targetpath_tex, subs_data)
     targetpath_html = os.path.splitext(targetpath_tex)[0] + '.html'
     # конвертируем в hmtl
-    tex2html(
+    if tex2html(
         sourcepath=targetpath_tex,
         targetpath=targetpath_html
-    )
-
-    # отдаем содержимое html
-    with open(targetpath_html, 'r', encoding='utf-8') as file:
-        src = file.read()
-    return HTML(src)
+    ):
+        # отдаем содержимое html
+        with open(targetpath_html, 'r', encoding='utf-8') as file:
+            src = file.read()
+        return HTML(src)
