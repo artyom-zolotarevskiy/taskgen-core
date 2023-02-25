@@ -12,4 +12,3 @@ pylatexenc
 beautifulsoup4
 tabulate
 configparser
-logging

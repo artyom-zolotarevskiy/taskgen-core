@@ -1,16 +1,13 @@
 .DS_Store
 .idea/
 .ipynb_checkpoints/
-bank/**/data
-bank/**/substitutions
-bank-private/
-results/
-templates/special
-taskgen/__pycache__/
-tmp/
+bin/
+include/
+lib/
 build/
 dist/
 taskgen.egg-info/
+taskgen/__pycache__/
 *.log
 *.aux
 *.dvi
@@ -20,3 +17,4 @@ taskgen.egg-info/
 *.depytx
 *.synctex.gz
 *.pytxcode
+pyvenv.cfg

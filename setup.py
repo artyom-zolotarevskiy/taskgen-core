@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from setuptools import setup, find_packages
+import os
 
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
@@ -7,6 +8,8 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 def parse_requirements(filename):
     """Load requirements from a pip requirements file."""
+    if not os.path.exists(filename):
+        return []
     lineiter = (line.strip() for line in open(filename))
     return [
         line
@@ -16,22 +19,21 @@ def parse_requirements(filename):
 
 
 setup(name='taskgen',
-      version='0.3.2',
+      version='0.3.4',
       author='Артём Золотаревский',
       author_email='artyom@zolotarevskiy.ru',
-      description='Генератор экзаменационных билетов на базе MikTex',
+      description='Ядро генератора банка задач на базе MiKTeX и Jupyter Notebook',
       long_description=long_description,
       long_description_content_type="text/markdown",
-      url='https://github.com/artyom-zolotarevskiy/taskgen',
+      url='https://github.com/artyom-zolotarevskiy/taskgen-core',
       project_urls={
-          'Bug Tracker': 'https://github.com/artyom-zolotarevskiy/taskgen/issues',
+          'Bug Tracker': 'https://github.com/artyom-zolotarevskiy/taskgen-core/issues',
       },
-      license='GPLV3',
+      license='',
       packages=find_packages(),
       install_requires=parse_requirements('requirements.txt'),
       classifiers=[
           'Programming Language :: Python :: 3',
-          'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
           'Operating System :: OS Independent',
       ],
       )
