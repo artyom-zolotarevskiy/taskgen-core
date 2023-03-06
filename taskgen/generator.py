@@ -44,13 +44,6 @@ __SETTINGS_FOLDER__ = find_settings_folder()
 
 config = configparser.ConfigParser()
 config['GENERAL'] = {
-    # Название файла шаблона задачи, в который будет
-    # выполняться подстановка сгенерированных параметров
-    'template_name': 'template.tex',
-
-    # Название файла, содержащего код параметризация задачи
-    'parametrizator_name': 'parametrizator.ipynb',
-
     # Шаблон строкового выражения для подстановки параметров в общий шаблон задачи.
     # Вместо двух символов процента (%%) в файле шаблона задачи должно располагаться
     # название подставляемой переменной. Обязательно, чтобы данная настройка
@@ -110,14 +103,62 @@ def latex_subs(from_file, to_file, params):
     with open(to_file, 'w', encoding='utf-8') as file:
         file.write(src)
 
+def get_parametrizator_path(folder, logging_enabled=True):
+    """
+    Выдает путь к файлу параметризации (*.ipynb) задачи, который находится в переданной папке.
+    """
+    lst = glob.glob(os.path.join(folder, '*.ipynb'))
+    if len(lst) == 1:
+        path = lst[0]
+        return path
+    elif len(lst) > 0:
+        path = lst[0]
+        if logging_enabled:
+            logging.warning(
+                'В папке "' + folder + '" лежит несколько файлов с расширением .ipynb. \n'
+                'В качестве файла параметризации выбран "' + path + '".')
+        return path
+    else:
+        if logging_enabled:
+            logging.error(
+                'Файл параметризации не найден в папке: "' + folder + '". \n'
+                'Это должен быть файл с расширением .ipynb. Имя может быть любое.')
+        return False
+
+def get_template_path(folder):
+    """
+    Выдает путь к файлу шаблону (*.tex) задачи, который находится в переданной папке.
+    """
+    lst = glob.glob(os.path.join(folder, '*.tex'))
+    if len(lst) == 1:
+        path = lst[0]
+        return path
+    elif len(lst) > 0:
+        path = lst[0]
+        logging.warning(
+            'В папке "' + folder + '" лежит несколько файлов с расширением .tex. \n'
+            'В качестве файла шаблона выбран "' + path + '".')
+        return path
+    else:
+        logging.error(
+            'Файл шаблона не найден в папке: "' + folder + '". \n'
+            'Это должен быть файл с расширением .tex. Имя может быть любое.')
+        return False
 
 def gen_subs_data(task_folder, n):
     '''
-    Генерируем данные для подстановки.
-    Эти данные в json формате будут располагаться в подпапке "data" папки задачи.
+    Генерирует данные для создания файлов с подстановками. Для этого в папке задачи в подпапке "data" ({task}/data)
+    запускает ноутбук параметризации задачи и выполняет функцию генерации переменных для подстановки заданное число раз.
+    В результате создается "data.json" файл, содержащий список словарей с переменными подстановками, а также
+    в этой папке появляются динамически генерируемые файлы, такие как изображения, csv, xlsx, ..., если такая логика
+    заложена в ноутбуке параметризации.
     '''
+    # находим файл ноутбука
+    path = get_parametrizator_path(task_folder)
+    if not path:
+        return False
+
     # читаем файл ноутбука
-    path = os.path.join(task_folder, config.get('GENERAL', 'parametrizator_name'))
     with open(path, 'r', encoding='utf-8') as file:
         # распознаем json cтруктуру документа
         ipynb_src = json.load(file)
@@ -138,8 +179,7 @@ def gen_subs_data(task_folder, n):
     parametrizer_script += 'import json\n'
     parametrizer_script += 'parametrizer_result = []\n'
     parametrizer_script += f"for i in range({n}):\n\tparametrizer_result.append({config.get('GENERAL', 'parameterizer_function_name')}())\n"
-    parametrizer_script += "with open(r'" + os.path.join(data_directory,
-        'data.json') + "', 'w', encoding='utf-8') as file:\n\tjson.dump(parametrizer_result, file)\n"
+    parametrizer_script += "with open('data.json', 'w', encoding='utf-8') as file:\n\tjson.dump(parametrizer_result, file)\n"
 
     # сохраням код параметризации в отдельный .py файл
     with open(os.path.join(data_directory, 'parametrizator.py'), 'w', encoding='utf-8') as file:
@@ -153,7 +193,7 @@ def gen_subs_data(task_folder, n):
     # возвращаемся в исходную директорию
     os.chdir(initial_path)
 
-    logging.info('"' + task_folder + '" json файл с данными для подстановок создан')
+    logging.info('"' + task_folder + '" данные для подстановки в шаблон созданы')
 
 
 def get_tex_body(file):
@@ -185,11 +225,10 @@ def merge_tex(files_list, header='taskgen', use_template=False):
 
 def gen_data(n=1, folder=config.get('GENERAL', 'bank_folder'), multiprocessing=True):
     '''
-    Генерирует данные для подстановки для каждой задачи в папке.
-    Основан на функции "gen_subs_data".
+    Запускает функцию "gen_subs_data" в многопоточном режиме для всех задач в указанной папке.
     '''
     lst = list(map(lambda ipynb_file: (os.path.dirname(ipynb_file), n), glob.glob(
-                os.path.join(folder, '**', config.get('GENERAL', 'parametrizator_name')), recursive=True)))
+                os.path.join(folder, '**', '*.ipynb'), recursive=True)))
     if multiprocessing:
         with Pool(int(config.get('GENERAL', 'parameterizer_threads_count'))) as p:
             p.starmap(gen_subs_data, lst)
@@ -206,8 +245,7 @@ def gen_subs(n=1, folder=config.get('GENERAL', 'bank_folder')):
     Создает заданное число подстановок каждой задачи в указанной папке.
     Данные для подстановок должны быть заранее сгенерированы посредством функции "gen_data".
     '''
-    for ipynb_file in glob.glob(os.path.join(folder, '**', config.get('GENERAL', 'parametrizator_name')),
-                                recursive=True):
+    for ipynb_file in glob.glob(os.path.join(folder, '**', '*.ipynb'), recursive=True):
         task_folder = os.path.dirname(ipynb_file)
         # создаем директорию для хранения файлов подстановок
         substitutions_directory = os.path.join(task_folder, 'substitutions', 'tex')
@@ -225,10 +263,14 @@ def gen_subs(n=1, folder=config.get('GENERAL', 'bank_folder')):
         # читаем файл с данными для подстановок
         with open(os.path.join(task_folder, 'data', 'data.json'), 'r', encoding='utf-8') as file:
             data = json.load(file)
+        # находим файл шаблона в папке задачи
+        template_path = get_template_path(task_folder)
+        if not template_path:
+            return False
         # создаем подстановки
         for i in range(len(data)):
             # подставляем значения
-            latex_subs(from_file=os.path.join(task_folder, config.get('GENERAL', 'template_name')),
+            latex_subs(from_file=template_path,
                        to_file=os.path.join(substitutions_directory, f'substitution_{i + 1}.tex'), params=data[i])
         # список всех файлов с подстановками
         subs_files_list = glob.glob(os.path.join(substitutions_directory, 'substitution_*.tex'))
@@ -328,8 +370,9 @@ def make_variants_structure(folder=config.get('GENERAL', 'bank_folder'), size=1,
     Кол-во задач в варианте то же, что и кол-во папок в переданной директории folder.
     Порядок задач в варианте зависит от лексикографического порядка папок.
 
-    Сначала случайным образом выбирается тема, затем случайным образом выбирается задача, после этого случайным
-    образом выбирается i-я подстановка.
+    Т.к. уровень вложенности папок не ограничен, генератор спускается вниз до тех пор, пока не обнаружит в директории
+    файл *.ipynb, при этом папка на каждом уровне выбирается случайным образом с учетом весов, указанных в названии.
+    После чего, дойдя до папки задачи, случайным образом выбирается подстановка.
 
     :param folder: Папка, в которой лежат задачи с подстановками.
     :param size: Количество создаваемых вариантов.
@@ -340,32 +383,44 @@ def make_variants_structure(folder=config.get('GENERAL', 'bank_folder'), size=1,
     variants = {}
     for variant_number in range(start, start + size):
         logging.info('Создаем структуру билета № ' + str(variant_number) + '...')
-        # обходим каждый вопрос
-        for question_folder in sorted(glob.glob(os.path.join(folder, '*'))):
-            # случайным образом выбираем тему):
-            omega_themes = get_omega_folders(question_folder)
-            if len(omega_themes) == 0:
-                logging.warning('Директория ' + question_folder + ' не содержит папок с темами!')
-                continue
-            theme_folder = random.choice(omega_themes)
-            # случайным образом выбираем задачу
-            omega_tasks = get_omega_folders(theme_folder)
-            if len(omega_tasks) == 0:
-                logging.warning('Директория ' + theme_folder + ' не содержит папок с задачами!')
-                continue
-            task_folder = random.choice(omega_tasks)
+        # проверяем наличие файла параметризации в директории
+        is_task_folder = get_parametrizator_path(folder, logging_enabled=False) is not False
+        if is_task_folder:
             # случайным образом выбираем подстановку
-            substitutions_list = glob.glob(os.path.join(task_folder, 'substitutions', 'tex', 'substitution_*.tex'))
+            substitutions_list = glob.glob(os.path.join(folder, 'substitutions', 'tex', 'substitution_*.tex'))
             substitution_file = random.choice(substitutions_list)
             # сохраняем выбор
             variants.update({variant_number: variants.get(variant_number, []) + [substitution_file]})
+        else:
+            # обходим каждый вопрос
+            for question_folder in sorted(glob.glob(os.path.join(folder, '*'))):
+                flag = True
+                current_folder = question_folder
+                while flag:
+                    # проверяем наличие файла параметризации в директории
+                    is_task_folder = get_parametrizator_path(current_folder, logging_enabled=False) is not False
+                    if is_task_folder:
+                        # случайным образом выбираем подстановку
+                        substitutions_list = glob.glob(os.path.join(current_folder, 'substitutions', 'tex', 'substitution_*.tex'))
+                        substitution_file = random.choice(substitutions_list)
+                        # сохраняем выбор
+                        variants.update({variant_number: variants.get(variant_number, []) + [substitution_file]})
+                        flag = False
+                    else:
+                        # случайным образом выбираем папку:
+                        omega_folders = get_omega_folders(current_folder)
+                        if len(omega_folders) == 0:
+                            logging.warning('Директория "' + question_folder + '" не содержит папок!')
+                            flag = False
+                            continue
+                        current_folder = random.choice(omega_folders)
 
     # сохраняем структуру в папке результатов
     save_structure(structure=variants, filename='structure')
 
     return variants
 
-def make_tex_variant(variant_number, structure):
+def make_tex_variant(variant_number, structure, print_bilet_number=True, prefix='variant-'):
     '''
     На основе переданной структуры задач создает файл варианта в формате TeX
     :param variant_number: Номер варианта.
@@ -374,8 +429,13 @@ def make_tex_variant(variant_number, structure):
     logging.info('Создаем билет № ' + str(variant_number) + ' в TeX формате...')
     # тело билета
     variant_src = r'\documentclass[11pt]{article}' + '\n'
-    variant_src += r'\usepackage[use_template]{taskgen}' + '\n'
-    variant_src += r'\begin{document}' + '\n\n\setcounter{biletnumber}{' + str(variant_number) + '}\n'
+    if print_bilet_number:
+        variant_src += r'\usepackage[use_template]{taskgen}' + '\n'
+    else:
+        variant_src += r'\usepackage[use_template,not_use_bilet_number]{taskgen}' + '\n'
+    variant_src += r'\begin{document}' + '\n\n'
+    if print_bilet_number:
+        variant_src += r'\setcounter{biletnumber}{' + str(variant_number) + '}\n'
     # обходим каждый вопрос
     for substitution_file in structure:
         # добавляем задачу в тело билета
@@ -386,7 +446,7 @@ def make_tex_variant(variant_number, structure):
     results_directory = os.path.join(os.getcwd(), 'results', 'tex')
     if not os.path.exists(results_directory):
         os.makedirs(results_directory)
-    with open(os.path.join(results_directory, f'variant-{str(variant_number)}.tex'), 'w', encoding='utf-8') as file:
+    with open(os.path.join(results_directory, f'{prefix}{str(variant_number)}.tex'), 'w', encoding='utf-8') as file:
         file.write(variant_src)
     # копируем taskgen.sty из настроек в данную директорию
     dst_taskgen_sty_path = os.path.join(results_directory, 'taskgen.sty')
@@ -736,23 +796,25 @@ def merge_all_substitutions(folder=config.get('GENERAL', 'bank_folder')):
     # создаем структуру
     structure = []
     # обходим каждый вопрос
-    for question_folder in sorted(glob.glob(os.path.join(folder, '*'))):
-        omega_themes = get_omega_folders(question_folder)
-        # обходим каждую тему
-        for theme_folder in omega_themes:
-            omega_tasks = get_omega_folders(theme_folder)
-            # обходим каждую тему
-            for task_folder in omega_tasks:
-                substitutions_list = sorted(glob.glob(os.path.join(task_folder,
-                                                                   'substitutions',
-                                                                   'tex',
-                                                                   'substitution_*.tex')))
-                structure += substitutions_list
+    # для этого находим все файлы параметризации .ipynb
+    for ipynb_file in glob.glob(os.path.join(folder, '**', '*.ipynb'), recursive=True):
+        task_folder = os.path.dirname(ipynb_file)
+        substitutions_list = sorted(
+            glob.glob(
+                os.path.join(
+                    task_folder,
+                   'substitutions',
+                   'tex',
+                   'substitution_*.tex'
+                )
+            )
+        )
+        structure += substitutions_list
 
     # сохраняем структуру объединенного варианта в папке результатов
     save_structure(structure={'all-substitutions-merged': structure}, filename='structure-all-substitutions-merged')
 
-    make_tex_variant(variant_number='all-substitutions-merged', structure=structure)
+    make_tex_variant(variant_number='all-substitutions-merged', structure=structure, print_bilet_number=False, prefix='')
     make_html_variant(variant_number='all-substitutions-merged', structure=structure)
 
     logging.info('Объединенные файлы всех подстановок в TeX и HTML форматах созданы!')
@@ -812,6 +874,10 @@ def make_variants(folder=config.get('GENERAL', 'bank_folder'), size=1, start=1):
     merge_html_variants(with_solution=True)
     merge_html_variants(with_solution=False)
 
+    # обновляем исходный код mathjax
+    dst_mathjax_path = os.path.join(os.path.join(os.path.dirname(results_directory), 'html'), 'mathjax.js')
+    shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'mathjax.js'), dst_mathjax_path)
+
     # создаем объединенный файл вариантов в формате Moodle XML
     merge_moodle_variants()
 
@@ -825,11 +891,24 @@ def variants2pdf():
              os.path.join(os.getcwd(), 'results', 'pdf'), in_one_page=True)
 
 
-def tex2html(sourcepath, targetpath):
+def tex2html(sourcepath, targetpath=''):
     '''
     Конвертирует TeX файл в HTML. Использует make4ht.
+
+    Если в качестве входного пути передана директория, то функция рекурсивно (с любым уровнем вложенности)
+    находит все папки с задачами в этой директории и конвертирует их объединенные tex файлы в html с последующей
+    нарезкой на отдельные подстановки.
     '''
     sourcepath = os.path.abspath(sourcepath)
+    if os.path.isdir(sourcepath):
+        is_task_folder = get_parametrizator_path(sourcepath, logging_enabled=False) is not False
+        if is_task_folder:
+            tex_substitutions2html_optimized(folder=sourcepath, remerge=True)
+            return True
+        else:
+            for task_parametrizer_file in glob.glob(os.path.join(sourcepath, '**', '*.ipynb'), recursive=True):
+                tex2html(os.path.dirname(task_parametrizer_file))
+            return True
     targetpath = os.path.abspath(targetpath)
 
     initial_path = os.getcwd()
@@ -865,6 +944,11 @@ def tex2html(sourcepath, targetpath):
         html = html.replace('class="MathClass-close">', 'class="MathClass-close" stretchy="false">')
     with open(targetpath, 'w', encoding='utf-8') as file:
         file.write(html)
+
+    # копируем исходный код mathjax в папку назначения
+    dst_mathjax_path = os.path.join(os.path.dirname(targetpath), 'mathjax.js')
+    if not os.path.exists(dst_mathjax_path):
+        shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'mathjax.js'), dst_mathjax_path)
 
     # очищаем текущую директорию от временных файлов
     logging.info('Удаляем временные файлы для ' + sourcepath + '...')
@@ -1030,10 +1114,11 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
             file.write(solution)
 
 
-def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder')):
+def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder'), remerge=False):
     '''
     Конвертирует TeX файлы подстановок в HTML оптимизированным способом за счет использования merged файла.
     Благодаря этому множество файлов подстановок данной задачи конвертируются в html за 1 проход.
+    Параметр remerge указывает на то, нужно ли пересобирать объединенный файл подстановок перед конвертацией.
     '''
     folder = os.path.abspath(os.path.join(folder))
     src_lst = glob.glob(
@@ -1041,6 +1126,14 @@ def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder')
         recursive=True
     )
     for file_path in src_lst:
+        if remerge:
+            substitutions_directory = os.path.dirname(file_path)
+            # список всех файлов с подстановками
+            subs_files_list = glob.glob(os.path.join(substitutions_directory, 'substitution_*.tex'))
+            merged_latex_file = merge_tex(subs_files_list)
+            # сохраняем объединенный файл подстановок
+            with open(os.path.join(substitutions_directory, 'substitutions_merged.tex'), 'w', encoding='utf-8') as file:
+                file.write(merged_latex_file)
         mergedTex2HtmlWithSlicing(file_path)
     logging.info('Файлы подстановок сконвертированы в HTML!')
 
@@ -1070,14 +1163,14 @@ def count_html_substitutions(folder=config.get('GENERAL', 'bank_folder')):
                          recursive=True))
 
 
-def show(subs_data={}, template_name='template.tex'):
+def show(subs_data={}):
     '''
     Выводит задачу с подставленными значениями сконвертированную из TeX в HTML.
     '''
-    # директория, в которой располагается данный ноутбук
-    # если файл шаблона не найден
-    if not os.path.exists(template_name):
-        return 'Шаблон задачи не найден!'
+    # находим файл шаблона в папке задачи
+    template_path = get_template_path(os.getcwd())
+    if not template_path:
+        return False
     # создаем директорию для хранения результатов
     results_directory = os.path.join(os.getcwd(), 'tmp')
     if not os.path.exists(results_directory):
@@ -1088,10 +1181,10 @@ def show(subs_data={}, template_name='template.tex'):
     if not os.path.exists(dst_taskgen_sty_path):
         shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
     # подставляем переданные значения
-    logging.info(f'Подставляем переданные значения в шаблон "{template_name}"...')
+    logging.info(f'Подставляем переданные значения в шаблон "{template_path}"...')
     subs_file_name = datetime.now().strftime("subs_%d.%m.%Y_%H-%M-%S.tex")
     targetpath_tex = os.path.join(results_directory, subs_file_name)
-    latex_subs(template_name, targetpath_tex, subs_data)
+    latex_subs(template_path, targetpath_tex, subs_data)
     targetpath_html = os.path.splitext(targetpath_tex)[0] + '.html'
     # конвертируем в hmtl
     if tex2html(

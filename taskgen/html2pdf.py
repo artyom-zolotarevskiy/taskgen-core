@@ -57,7 +57,14 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
 
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
-    for filename in sorted(filter(lambda filename: filename.endswith('.html') and 'merged' not in filename, os.listdir(source))):
+    for filename in sorted(
+        filter(
+            lambda filename:
+                filename.endswith('.html') and 'merged' not in filename and any(map(str.isdigit, filename)),
+            os.listdir(source)
+        ),
+        key=lambda filename: int(''.join(symbol for symbol in filename if symbol.isdigit()))
+    ):
         # открываем html файл
         print('Открываем файл:', filename)
         driver.get(f'file://{os.path.join(source, filename)}')
@@ -123,7 +130,8 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
                                  not filename.endswith('merged.pdf') and
                                  not filename.endswith('-only-problem.pdf'),
                 os.listdir(output)
-            )
+            ),
+            key=lambda filename: int(''.join(symbol for symbol in filename if symbol.isdigit()))
     ):
         mergedObject.append(PdfFileReader(os.path.join(output, filename)))
     mergedObject.write(os.path.join(output, 'variants_with_solution_merged.pdf'))
@@ -136,7 +144,8 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'), output = os.path.join(os.
                                  not filename.endswith('merged.pdf') and
                                  not filename.endswith('-with-solution.pdf'),
                 os.listdir(output)
-            )
+            ),
+            key=lambda filename: int(''.join(symbol for symbol in filename if symbol.isdigit()))
     ):
         mergedObject.append(PdfFileReader(os.path.join(output, filename)))
     mergedObject.write(os.path.join(output, 'variants_only_problem_merged.pdf'))

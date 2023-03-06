@@ -4,7 +4,7 @@ pyyaml>=5.3.1
 cryptography>=3.3.1
 jinja2
 markupsafe
-pyqt5<5.13
+pyqt5
 selenium~=4.1.0
 webdriver_manager
 PyPDF2

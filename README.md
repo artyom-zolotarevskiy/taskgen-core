@@ -6,8 +6,6 @@ Task Generator Core
 Для работы с ядром необходимо использовать панель управления, которая размещена здесь - 
 https://github.com/artyom-zolotarevskiy/taskgen
 
-Последнее обновление кодовой базы: 25.02.2023.
-
 По всем вопросам: artyom@zolotarevskiy.ru.
 
 Возможности
