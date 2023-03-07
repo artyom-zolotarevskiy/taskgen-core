@@ -39,7 +39,7 @@ def send_devtools(driver, cmd, params={}):
 
 def latex_is_loaded(driver):
     #print(arg)
-    state = driver.execute_script('return window.MathJax.config.startup.typeset;')
+    state = driver.execute_script('return window.mathjax_loaded;')
     #print('latex_state=%s' % state)
     return state == True
 

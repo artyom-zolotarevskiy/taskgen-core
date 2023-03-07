@@ -20,6 +20,7 @@ from IPython.display import HTML
 import re
 import binascii
 
+
 def find_settings_folder(initial_path=os.getcwd()):
     '''
     Данная функция ищет папку "settings" в родительских папках относительно переданной до 5 уровней вложенности вверх.
@@ -40,16 +41,11 @@ def find_settings_folder(initial_path=os.getcwd()):
     logging.error('Не удалось найти папку с настройками!')
     return False
 
+
 __SETTINGS_FOLDER__ = find_settings_folder()
 
 config = configparser.ConfigParser()
 config['GENERAL'] = {
-    # Шаблон строкового выражения для подстановки параметров в общий шаблон задачи.
-    # Вместо двух символов процента (%%) в файле шаблона задачи должно располагаться
-    # название подставляемой переменной. Обязательно, чтобы данная настройка
-    # содержала какие-то символы до и после знака процента
-    'substitution_template': '\subs{%%}',
-
     # Название функции, которая возвращает словарь (ассоциативный массив) названий
     # подставляемых переменных и их соответствующие значения для новой параметризации
     'parameterizer_function_name': 'GET',
@@ -103,6 +99,7 @@ def latex_subs(from_file, to_file, params):
     with open(to_file, 'w', encoding='utf-8') as file:
         file.write(src)
 
+
 def get_parametrizator_path(folder, logging_enabled=True):
     """
     Выдает путь к файлу параметризации (*.ipynb) задачи, который находится в переданной папке.
@@ -116,14 +113,15 @@ def get_parametrizator_path(folder, logging_enabled=True):
         if logging_enabled:
             logging.warning(
                 'В папке "' + folder + '" лежит несколько файлов с расширением .ipynb. \n'
-                'В качестве файла параметризации выбран "' + path + '".')
+                                       'В качестве файла параметризации выбран "' + path + '".')
         return path
     else:
         if logging_enabled:
             logging.error(
                 'Файл параметризации не найден в папке: "' + folder + '". \n'
-                'Это должен быть файл с расширением .ipynb. Имя может быть любое.')
+                                                                      'Это должен быть файл с расширением .ipynb. Имя может быть любое.')
         return False
+
 
 def get_template_path(folder):
     """
@@ -137,13 +135,14 @@ def get_template_path(folder):
         path = lst[0]
         logging.warning(
             'В папке "' + folder + '" лежит несколько файлов с расширением .tex. \n'
-            'В качестве файла шаблона выбран "' + path + '".')
+                                   'В качестве файла шаблона выбран "' + path + '".')
         return path
     else:
         logging.error(
             'Файл шаблона не найден в папке: "' + folder + '". \n'
-            'Это должен быть файл с расширением .tex. Имя может быть любое.')
+                                                           'Это должен быть файл с расширением .tex. Имя может быть любое.')
         return False
+
 
 def gen_subs_data(task_folder, n):
     '''
@@ -215,7 +214,7 @@ def merge_tex(files_list, header='taskgen', use_template=False):
     Возвращает исходный код объединенного файла.
     '''
     merged_file = r'\documentclass[11pt]{article}' + '\n'
-    merged_file += r'\usepackage' + ('[use_template]' if use_template else '') + '{' + header + '}' + '\n'
+    merged_file += r'\usepackage' + ('[not_use_template]' if not use_template else '') + '{' + header + '}' + '\n'
     merged_file += r'\begin{document}' + '\n'
     for path in files_list:
         merged_file += get_tex_body(path) + '\n'
@@ -228,7 +227,7 @@ def gen_data(n=1, folder=config.get('GENERAL', 'bank_folder'), multiprocessing=T
     Запускает функцию "gen_subs_data" в многопоточном режиме для всех задач в указанной папке.
     '''
     lst = list(map(lambda ipynb_file: (os.path.dirname(ipynb_file), n), glob.glob(
-                os.path.join(folder, '**', '*.ipynb'), recursive=True)))
+        os.path.join(folder, '**', '*.ipynb'), recursive=True)))
     if multiprocessing:
         with Pool(int(config.get('GENERAL', 'parameterizer_threads_count'))) as p:
             p.starmap(gen_subs_data, lst)
@@ -341,6 +340,7 @@ def get_choise_prob(folder):
     omega_folders = get_omega_folders(os.path.dirname(folder))
     return omega_folders.count(folder) / len(omega_folders)
 
+
 def save_structure(structure, filename):
     '''
     Сохраняет структуру вариантов в папке результатов.
@@ -362,6 +362,7 @@ def save_structure(structure, filename):
         file.write(txt_file_src)
 
     logging.info('Структура билетов cохранена!')
+
 
 def make_variants_structure(folder=config.get('GENERAL', 'bank_folder'), size=1, start=1):
     '''
@@ -401,7 +402,8 @@ def make_variants_structure(folder=config.get('GENERAL', 'bank_folder'), size=1,
                     is_task_folder = get_parametrizator_path(current_folder, logging_enabled=False) is not False
                     if is_task_folder:
                         # случайным образом выбираем подстановку
-                        substitutions_list = glob.glob(os.path.join(current_folder, 'substitutions', 'tex', 'substitution_*.tex'))
+                        substitutions_list = glob.glob(
+                            os.path.join(current_folder, 'substitutions', 'tex', 'substitution_*.tex'))
                         substitution_file = random.choice(substitutions_list)
                         # сохраняем выбор
                         variants.update({variant_number: variants.get(variant_number, []) + [substitution_file]})
@@ -420,7 +422,8 @@ def make_variants_structure(folder=config.get('GENERAL', 'bank_folder'), size=1,
 
     return variants
 
-def make_tex_variant(variant_number, structure, print_bilet_number=True, prefix='variant-'):
+
+def make_tex_variant(variant_number, structure, print_bilet_number=True, prefix='variant-', another_bilet_title=''):
     '''
     На основе переданной структуры задач создает файл варианта в формате TeX
     :param variant_number: Номер варианта.
@@ -429,13 +432,12 @@ def make_tex_variant(variant_number, structure, print_bilet_number=True, prefix=
     logging.info('Создаем билет № ' + str(variant_number) + ' в TeX формате...')
     # тело билета
     variant_src = r'\documentclass[11pt]{article}' + '\n'
-    if print_bilet_number:
-        variant_src += r'\usepackage[use_template]{taskgen}' + '\n'
-    else:
-        variant_src += r'\usepackage[use_template,not_use_bilet_number]{taskgen}' + '\n'
+    variant_src += r'\usepackage{taskgen}' + '\n'
     variant_src += r'\begin{document}' + '\n\n'
-    if print_bilet_number:
-        variant_src += r'\setcounter{biletnumber}{' + str(variant_number) + '}\n'
+    if len(another_bilet_title) > 0:
+        variant_src += r'\printbilettitle{' + another_bilet_title + '}\n'
+    elif print_bilet_number:
+        variant_src += r'\printbilettitle{Билет № ' + str(variant_number) + '}\n'
     # обходим каждый вопрос
     for substitution_file in structure:
         # добавляем задачу в тело билета
@@ -453,6 +455,7 @@ def make_tex_variant(variant_number, structure, print_bilet_number=True, prefix=
     if not os.path.exists(dst_taskgen_sty_path):
         shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
     logging.info('Билет № ' + str(variant_number) + ' в TeX формате создан!')
+
 
 def make_html_variant(variant_number, structure, with_solution=True):
     '''
@@ -496,6 +499,10 @@ def make_html_variant(variant_number, structure, with_solution=True):
         with open(solution_template_file, 'r', encoding='utf-8') as file:
             solution_template = file.read()
 
+        answer_template_file = os.path.join(template_folder, 'answer.html')
+        with open(answer_template_file, 'r', encoding='utf-8') as file:
+            answer_template = file.read()
+
     # обходим каждый вопрос
     variant_src = ''
     for problem_number, substitution_tex_file in enumerate(structure):
@@ -509,10 +516,18 @@ def make_html_variant(variant_number, structure, with_solution=True):
         # путь к соответствующем html файлу решения
         if with_solution:
             solution_html_file = os.path.join(os.path.dirname(os.path.dirname(substitution_tex_file)),
-                                             'html',
-                                             os.path.splitext(os.path.basename(substitution_tex_file))[0] + '_solution.html')
+                                              'html',
+                                              os.path.splitext(os.path.basename(substitution_tex_file))[
+                                                  0] + '_solution.html')
             with open(solution_html_file, 'r', encoding='utf-8') as file:
                 solution_html_src = file.read()
+
+            answer_html_file = os.path.join(os.path.dirname(os.path.dirname(substitution_tex_file)),
+                                              'html',
+                                              os.path.splitext(os.path.basename(substitution_tex_file))[
+                                                  0] + '_answer.html')
+            with open(answer_html_file, 'r', encoding='utf-8') as file:
+                answer_html_src = file.read()
 
         # добавляем задачу в тело билета
         variant_src += problem_template
@@ -524,6 +539,9 @@ def make_html_variant(variant_number, structure, with_solution=True):
         if with_solution:
             variant_src += solution_template
             variant_src = variant_src.replace('${solution_src}', solution_html_src)
+
+            variant_src += answer_template
+            variant_src = variant_src.replace('${answer_src}', answer_html_src)
     # подставляем содержимое билета
     variant = variant.replace('${variant_src}', variant_src)
 
@@ -555,6 +573,7 @@ def make_html_variant(variant_number, structure, with_solution=True):
                  ' в HTML формате' +
                  (' с решением ' if with_solution else ' без решения ') +
                  'создан!')
+
 
 def make_moodle_variant(variant_number, structure):
     '''
@@ -607,13 +626,13 @@ def make_moodle_variant(variant_number, structure):
         with open(problem_html_file, 'r', encoding='utf-8') as file:
             problem_html_src = file.read()
 
-        # путь к соответствующем html файлу решения
-        solution_html_file = os.path.join(os.path.dirname(os.path.dirname(substitution_tex_file)),
+        # путь к соответствующем html файлу ответов
+        answer_html_file = os.path.join(os.path.dirname(os.path.dirname(substitution_tex_file)),
                                           'html',
                                           os.path.splitext(os.path.basename(substitution_tex_file))[
-                                              0] + '_solution.html')
-        with open(solution_html_file, 'r', encoding='utf-8') as file:
-            solution_html_src = file.read()
+                                              0] + '_answer.html')
+        with open(answer_html_file, 'r', encoding='utf-8') as file:
+            answer_html_src = file.read()
 
         # добавляем задачу в тело билета
         variant_src += problem_template
@@ -622,18 +641,20 @@ def make_moodle_variant(variant_number, structure):
 
         # добавляем секцию для ввода ответов
         # получаем численные ответы
-        # через регулярные выражения находим все значения по шаблону \answer {.*}\
-        answers = list(map(lambda answer: answer.replace(r',\!', '.'), re.findall(r'\\answer {(.*?)}\\', solution_html_src)))
+        # через регулярные выражения находим все значения по шаблону \answerfield {.*}\
+        answers = list(
+            map(lambda answer: answer.replace(r',\!', '.'), re.findall(r'\\answerfield {(.*?)}\\', answer_html_src)))
         if len(answers) == 0:
             logging.error('Не найдены ответы для задачи № ' + str(problem_number + 1) +
-                  ' в варианте № ' + str(variant_number) + '!')
+                          ' в варианте № ' + str(variant_number) + '!')
         # заменяем численные ответы на placeholder
         for answer in answers:
-            solution_html_src = solution_html_src.replace(r'\(\answer {' +
-                                                          answer.replace('.', r',\!') + '}\)', '{#x' + str(last_answer_index + 1) + '}')
+            answer_html_src = answer_html_src.replace(r'\(\answerfield {' +
+                                                          answer.replace('.', r',\!') + '}\)',
+                                                          '{#answer' + str(last_answer_index + 1) + '}')
             answers_xml += answer_template
             answers_xml = answers_xml.replace('${partindex}', str(last_answer_index))
-            answers_xml = answers_xml.replace('${placeholder}', 'x' + str(last_answer_index + 1))
+            answers_xml = answers_xml.replace('${placeholder}', 'answer' + str(last_answer_index + 1))
             answers_xml = answers_xml.replace('${answermark}', str(1))
             answers_xml = answers_xml.replace('${answer}', answer)
             # рассчитываем, сколько указано знаков в ответе после запятой, что определить допустимую ошибку
@@ -642,7 +663,7 @@ def make_moodle_variant(variant_number, structure):
                                               '0' + ('.' + abs(count_signs - 2) * '0' + '1' if count_signs > 0 else ''))
             last_answer_index += 1
 
-        problem_html_src += solution_html_src
+        problem_html_src += '<div class="answer">' + answer_html_src + '</div>'
 
         variant_src = variant_src.replace('${problem_src}', problem_html_src)
 
@@ -661,7 +682,8 @@ def make_moodle_variant(variant_number, structure):
     with open(os.path.join(results_directory, dst_file_name + '.xml'), 'w', encoding='utf-8') as file:
         file.write(variant)
 
-    logging.info('Билет № ' + str(variant_number) +' в формате Moodle XML создан!')
+    logging.info('Билет № ' + str(variant_number) + ' в формате Moodle XML создан!')
+
 
 def merge_tex_variants():
     '''
@@ -673,8 +695,9 @@ def merge_tex_variants():
 
     # список всех файлов вариантов
     variants_files_list = sorted(filter(lambda filename: 'merged' not in filename,
-        glob.glob(os.path.join(results_directory, 'variant-*.tex'))),
-        key=lambda filename: int(os.path.splitext(os.path.basename(filename))[0].replace('variant-', '')))
+                                        glob.glob(os.path.join(results_directory, 'variant-*.tex'))),
+                                 key=lambda filename: int(
+                                     os.path.splitext(os.path.basename(filename))[0].replace('variant-', '')))
     merged_tex_file = merge_tex(variants_files_list, use_template=True)
 
     # сохраняем объединенный файл вариантов
@@ -682,6 +705,7 @@ def merge_tex_variants():
         file.write(merged_tex_file)
 
     logging.info('Объединенный файл вариантов в TeX формате создан!')
+
 
 def merge_html_variants(with_solution=True):
     '''
@@ -698,15 +722,15 @@ def merge_html_variants(with_solution=True):
         variants_files_list = glob.glob(os.path.join(results_directory, 'variant-*-only-problem.html'))
 
     variants_files_list = sorted(filter(lambda filename: 'merged' not in filename,
-        variants_files_list),
-        key=lambda filename: int(
-            os.path.splitext(
-                os.path.basename(filename))[0]
-                .replace('variant-', '')
-                .replace('-with-solution', '')
-                .replace('-only-problem', '')
-        )
-    )
+                                        variants_files_list),
+                                 key=lambda filename: int(
+                                     os.path.splitext(
+                                         os.path.basename(filename))[0]
+                                         .replace('variant-', '')
+                                         .replace('-with-solution', '')
+                                         .replace('-only-problem', '')
+                                 )
+                                 )
 
     # берем файл общего шаблона html файла с подключением стилей и скриптов
     template_folder = os.path.join(config.get('GENERAL', 'templates_folder'), 'html')
@@ -746,6 +770,7 @@ def merge_html_variants(with_solution=True):
     logging.info('Объединенный файл вариантов в HTML формате ' +
                  ('с решениями' if with_solution else 'без решений') + ' создан!')
 
+
 def merge_moodle_variants():
     '''
     Объединяет файлы вариантов в Moodle XML формате в один "variants_merged.xml" файл.
@@ -756,7 +781,8 @@ def merge_moodle_variants():
 
     # список всех файлов вариантов
     variants_files_list = sorted(glob.glob(os.path.join(results_directory, 'variant-*.xml')),
-         key=lambda filename: int(os.path.splitext(os.path.basename(filename))[0].replace('variant-', '')))
+                                 key=lambda filename: int(
+                                     os.path.splitext(os.path.basename(filename))[0].replace('variant-', '')))
 
     # cортируем в порядке возрастания вариантов
     variants_files_list = sorted(variants_files_list)
@@ -803,9 +829,9 @@ def merge_all_substitutions(folder=config.get('GENERAL', 'bank_folder')):
             glob.glob(
                 os.path.join(
                     task_folder,
-                   'substitutions',
-                   'tex',
-                   'substitution_*.tex'
+                    'substitutions',
+                    'tex',
+                    'substitution_*.tex'
                 )
             )
         )
@@ -814,7 +840,8 @@ def merge_all_substitutions(folder=config.get('GENERAL', 'bank_folder')):
     # сохраняем структуру объединенного варианта в папке результатов
     save_structure(structure={'all-substitutions-merged': structure}, filename='structure-all-substitutions-merged')
 
-    make_tex_variant(variant_number='all-substitutions-merged', structure=structure, print_bilet_number=False, prefix='')
+    make_tex_variant(variant_number='all-substitutions-merged', structure=structure, print_bilet_number=True,
+                     prefix='', another_bilet_title='Объединенный файл всех подстановок')
     make_html_variant(variant_number='all-substitutions-merged', structure=structure)
 
     logging.info('Объединенные файлы всех подстановок в TeX и HTML форматах созданы!')
@@ -825,7 +852,7 @@ def remove_substitutions(folder=config.get('GENERAL', 'bank_folder')):
     Удаляет папки "substitutions", "data" и "tmp" для каждой задачи.
     '''
     tasks_folders_list = map(lambda path: os.path.dirname(path),
-                             glob.glob(os.path.join(folder, '**', 'parametrizator.ipynb'), recursive=True))
+                             glob.glob(os.path.join(folder, '**', '*.ipynb'), recursive=True))
     for task_folder in tasks_folders_list:
         if os.path.exists(os.path.join(task_folder, 'substitutions')):
             shutil.rmtree(os.path.join(task_folder, 'substitutions'))
@@ -883,6 +910,7 @@ def make_variants(folder=config.get('GENERAL', 'bank_folder'), size=1, start=1):
 
     logging.info('Файлы вариантов сгенерированы!')
 
+
 def variants2pdf():
     '''
     Конвертирует html файлы вариантов в pdf.
@@ -891,7 +919,7 @@ def variants2pdf():
              os.path.join(os.getcwd(), 'results', 'pdf'), in_one_page=True)
 
 
-def tex2html(sourcepath, targetpath=''):
+def tex2html(sourcepath=config.get('GENERAL', 'bank_folder'), targetpath=''):
     '''
     Конвертирует TeX файл в HTML. Использует make4ht.
 
@@ -929,7 +957,8 @@ def tex2html(sourcepath, targetpath=''):
 
     logging.info('Конвертируем файл ' + sourcepath + '...')
     cmd = 'make4ht --utf8 --config ht5mjlatex.cfg --mode draft --output-dir "' + os.path.dirname(targetpath) \
-        + '" --jobname "' + os.path.splitext(os.path.basename(targetpath))[0] + '" "' + os.path.basename(sourcepath) + '" "mathjax"'
+          + '" --jobname "' + os.path.splitext(os.path.basename(targetpath))[0] + '" "' + os.path.basename(
+        sourcepath) + '" "mathjax"'
     args = shlex.split(cmd)
     with subp.Popen(args, stdout=subp.PIPE) as proc:
         output = proc.stdout.read().decode('utf-8', 'ignore')
@@ -957,6 +986,7 @@ def tex2html(sourcepath, targetpath=''):
 
     return True
 
+
 def tex_substitutions2html(multiprocessing=True):
     '''
     Конвертирует TeX файлы подстановок в HTML.
@@ -967,10 +997,10 @@ def tex_substitutions2html(multiprocessing=True):
     )
     trgt_lst = list(map(
         lambda path:
-            os.path.splitext(path.replace(
-                os.path.join('substitutions', 'tex'),
-                os.path.join('substitutions', 'html')
-            ))[0] + '.html',
+        os.path.splitext(path.replace(
+            os.path.join('substitutions', 'tex'),
+            os.path.join('substitutions', 'html')
+        ))[0] + '.html',
         src_lst
     ))
     if multiprocessing:
@@ -981,13 +1011,14 @@ def tex_substitutions2html(multiprocessing=True):
             tex2html(sourcepath, targetpath)
     logging.info('Файлы вариантов сконвертированы в HTML!')
 
+
 def mergedTex2HtmlWithSlicing(merged_tex_file):
     '''
     Конвертирует объединенный TeX файл в HTML.
     После конвертации разбивает его на множество мелких html файлов, из которых он состоит.
 
     На вход ожидает путь к TeX файлу, содержащим множество задач.
-    Одна задача определяется набором из 2 окружений "problem" и "answer", идущих друг за другом.
+    Одна задача определяется набором из 3 окружений "problem", "solution" и "answer", идущих друг за другом.
     Конвертирует этот файл в его html версию средствами make4ht (функция "tex2html").
     Затем синтаксически анализирует DOM, идентифицирует искомые задачи и создает для каждой задачи
     свой набор html для формулировки условия и решения.
@@ -1018,6 +1049,7 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
 
     problems_pos = []
     solutions_pos = []
+    answers_pos = []
 
     for node in nodelist:
         if node.isNodeType(LatexEnvironmentNode) and node.environmentname == 'document':
@@ -1027,6 +1059,8 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
                         problems_pos.append(node.pos)
                     elif node.environmentname == 'solution':
                         solutions_pos.append(node.pos)
+                    elif node.environmentname == 'answer':
+                        answers_pos.append(node.pos)
 
     # количество символов в каждой строке
     size_lines = [len(line) for line in source_tex.split('\n')]
@@ -1081,29 +1115,34 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
             return source_html[start_pos:end_pos - len(end_key)]
 
     solution_line = 0
-    tasks = list(zip(problems_pos, solutions_pos))
+    tasks = list(zip(problems_pos, solutions_pos, answers_pos))
     problems_html = []
     solutions_html = []
+    answers_html = []
     for number, task_pos in enumerate(tasks):
-        (problem_pos, solution_pos) = task_pos
+        (problem_pos, solution_pos, answer_pos) = task_pos
         problem_line = find_line(pos=problem_pos, line_start=solution_line)
         solution_line = find_line(pos=solution_pos, line_start=problem_line - 1)
+        answer_line = find_line(pos=answer_pos, line_start=solution_line - 1)
 
         problem_html = extract_html(problem_line, solution_line)
         problems_html.append(problem_html)
 
-        if number < len(tasks) - 1:
-            solution_html = extract_html(solution_line,
-                                         find_line(pos=tasks[number + 1][0], line_start=solution_line))
-        else:
-            solution_html = extract_html(solution_line, None)
+        solution_html = extract_html(solution_line, answer_line)
         solutions_html.append(solution_html)
 
-    # сохраняем разбиение merged файла
-    for i, task in enumerate(zip(problems_html, solutions_html)):
-        (problem, solution) = task
+        if number < len(tasks) - 1:
+            answer_html = extract_html(answer_line,
+                                       find_line(pos=tasks[number + 1][0], line_start=answer_line))
+        else:
+            answer_html = extract_html(answer_line, None)
+        answers_html.append(answer_html)
 
-        # cохраняем файл без решения
+    # сохраняем разбиение merged файла
+    for i, task in enumerate(zip(problems_html, solutions_html, answers_html)):
+        (problem, solution, answer) = task
+
+        # cохраняем файл с условием
         dst_file = os.path.join(html_directory, 'substitution_' + str(i + 1) + '_problem.html')
         with open(dst_file, 'w', encoding='utf-8') as file:
             file.write(problem)
@@ -1112,6 +1151,11 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
         dst_file = os.path.join(html_directory, 'substitution_' + str(i + 1) + '_solution.html')
         with open(dst_file, 'w', encoding='utf-8') as file:
             file.write(solution)
+
+        # сохраняем файл с ответаси
+        dst_file = os.path.join(html_directory, 'substitution_' + str(i + 1) + '_answer.html')
+        with open(dst_file, 'w', encoding='utf-8') as file:
+            file.write(answer)
 
 
 def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder'), remerge=False):
@@ -1143,7 +1187,7 @@ def count_tasks(folder=config.get('GENERAL', 'bank_folder')):
     Считает количество задач, находящихся в данной папке.
     Уровень вложенности папок не ограничен.
     '''
-    return len(glob.glob(os.path.join(folder, '**', 'parametrizator.ipynb'), recursive=True))
+    return len(glob.glob(os.path.join(folder, '**', '*.ipynb'), recursive=True))
 
 
 def count_tex_substitutions(folder=config.get('GENERAL', 'bank_folder')):
@@ -1180,6 +1224,10 @@ def show(subs_data={}):
     dst_taskgen_sty_path = os.path.join(results_directory, 'taskgen.sty')
     if not os.path.exists(dst_taskgen_sty_path):
         shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
+    # копируем mathjax.js из настроек в данную директорию
+    dst_mathjax_js_path = os.path.join(results_directory, 'mathjax.js')
+    if not os.path.exists(dst_mathjax_js_path):
+        shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'mathjax.js'), dst_mathjax_js_path)
     # подставляем переданные значения
     logging.info(f'Подставляем переданные значения в шаблон "{template_path}"...')
     subs_file_name = datetime.now().strftime("subs_%d.%m.%Y_%H-%M-%S.tex")
@@ -1188,13 +1236,14 @@ def show(subs_data={}):
     targetpath_html = os.path.splitext(targetpath_tex)[0] + '.html'
     # конвертируем в hmtl
     if tex2html(
-        sourcepath=targetpath_tex,
-        targetpath=targetpath_html
+            sourcepath=targetpath_tex,
+            targetpath=targetpath_html
     ):
         # отдаем содержимое html
         with open(targetpath_html, 'r', encoding='utf-8') as file:
             src = file.read()
-        return HTML(src)
+        return HTML('<base target="_self" href="./tmp/">' + src)
+
 
 def copy_taskgen_sty(folder=os.getcwd(), force=False):
     '''
@@ -1205,8 +1254,10 @@ def copy_taskgen_sty(folder=os.getcwd(), force=False):
     dst_taskgen_sty_path = os.path.join(folder, 'taskgen.sty')
     if force or not os.path.exists(dst_taskgen_sty_path):
         shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
-        logging.info('Cтилевой файл TeX taskgen.sty из папки настроек "' + __SETTINGS_FOLDER__ + '" скопирован в папку "' +
-                     folder + '"')
+        logging.info(
+            'Cтилевой файл TeX taskgen.sty из папки настроек "' + __SETTINGS_FOLDER__ + '" скопирован в папку "' +
+            folder + '"')
     else:
-        logging.info('Cтилевой файл TeX taskgen.sty уже есть в указанной директории! Используйте функцию с параметром ' +
-                     '"force=True" для перезаписи файла!')
+        logging.info(
+            'Cтилевой файл TeX taskgen.sty уже есть в указанной директории! Используйте функцию с параметром ' +
+            '"force=True" для перезаписи файла!')
