@@ -18,3 +18,4 @@ taskgen/__pycache__/
 *.synctex.gz
 *.pytxcode
 pyvenv.cfg
+dist_old/

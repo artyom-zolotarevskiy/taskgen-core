@@ -137,10 +137,10 @@ def get_template_path(folder):
             'В папке "' + folder + '" лежит несколько файлов с расширением .tex. \n'
                                    'В качестве файла шаблона выбран "' + path + '".')
         return path
-    else:
-        logging.error(
-            'Файл шаблона не найден в папке: "' + folder + '". \n'
-                                                           'Это должен быть файл с расширением .tex. Имя может быть любое.')
+        if os.path.basename(folder) != 'data':
+            logging.error(
+                'Файл шаблона не найден в папке: "' + folder + '". \n'
+                                                               'Это должен быть файл с расширением .tex. Имя может быть любое.')
         return False
 
 
@@ -170,12 +170,13 @@ def gen_subs_data(task_folder, n):
 
     # создаем директорию для хранения подстановочных данных
     data_directory = os.path.join(task_folder, 'data')
-    if not os.path.exists(data_directory):
-        os.makedirs(data_directory)
+    if os.path.exists(data_directory):
+        shutil.rmtree(data_directory)
+    os.makedirs(data_directory)
 
     # добавляем код, запукающий функцию GET нужное количество раз
     # и сохранящий папаметризацию в json
-    parametrizer_script += 'import json\n'
+    parametrizer_script += '\n\nimport json\n'
     parametrizer_script += 'parametrizer_result = []\n'
     parametrizer_script += f"for i in range({n}):\n\tparametrizer_result.append({config.get('GENERAL', 'parameterizer_function_name')}())\n"
     parametrizer_script += "with open('data.json', 'w', encoding='utf-8') as file:\n\tjson.dump(parametrizer_result, file)\n"
@@ -192,7 +193,11 @@ def gen_subs_data(task_folder, n):
     # возвращаемся в исходную директорию
     os.chdir(initial_path)
 
-    logging.info('"' + task_folder + '" данные для подстановки в шаблон созданы')
+    # проверяем наличие data.json файла
+    if os.path.exists(os.path.join(data_directory, 'data.json')):
+        logging.info('"' + task_folder + '" данные для подстановки в шаблон созданы')
+    else:
+        logging.error('"' + task_folder + '" не удалось сгенерировать данные для подстановки в шаблон!')
 
 
 def get_tex_body(file):
@@ -236,7 +241,7 @@ def gen_data(n=1, folder=config.get('GENERAL', 'bank_folder'), multiprocessing=T
             (task_folder, n) = param
             gen_subs_data(task_folder, n)
 
-    logging.info('Генерация подстановочных данных завершена!')
+    logging.info('Функция генерации подстановочных данных завершила свою работу!')
 
 
 def gen_subs(n=1, folder=config.get('GENERAL', 'bank_folder')):
@@ -248,20 +253,16 @@ def gen_subs(n=1, folder=config.get('GENERAL', 'bank_folder')):
         task_folder = os.path.dirname(ipynb_file)
         # создаем директорию для хранения файлов подстановок
         substitutions_directory = os.path.join(task_folder, 'substitutions', 'tex')
-        if not os.path.exists(substitutions_directory):
-            os.makedirs(substitutions_directory)
-        # очищаем прошлые подстановки
-        for file in glob.glob(os.path.join(substitutions_directory, 'substitution_*.*')):
-            os.remove(file)
+        if os.path.exists(substitutions_directory):
+            shutil.rmtree(substitutions_directory)
+        os.makedirs(substitutions_directory)
         html_subs_folder = os.path.join(os.path.dirname(substitutions_directory), 'html');
         if os.path.exists(html_subs_folder):
             shutil.rmtree(html_subs_folder)
-        # удаляем прошлый пакет taskgen.sty
-        dst_taskgen_sty_path = os.path.join(substitutions_directory, 'taskgen.sty')
-        if os.path.exists(dst_taskgen_sty_path):
-            os.remove(dst_taskgen_sty_path)
         # копируем taskgen.sty из настроек в данную директорию
-        shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
+        copy_taskgen_sty(folder=substitutions_directory, logging_enabled=False)
+        # копируем taskgen.4ht из настроек в данную директорию
+        copy_taskgen_sty(folder=substitutions_directory, logging_enabled=False)
         # читаем файл с данными для подстановок
         with open(os.path.join(task_folder, 'data', 'data.json'), 'r', encoding='utf-8') as file:
             data = json.load(file)
@@ -453,10 +454,12 @@ def make_tex_variant(variant_number, structure, print_bilet_number=True, prefix=
         os.makedirs(results_directory)
     with open(os.path.join(results_directory, f'{prefix}{str(variant_number)}.tex'), 'w', encoding='utf-8') as file:
         file.write(variant_src)
+
     # копируем taskgen.sty из настроек в данную директорию
-    dst_taskgen_sty_path = os.path.join(results_directory, 'taskgen.sty')
-    if not os.path.exists(dst_taskgen_sty_path):
-        shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
+    copy_taskgen_sty(folder=results_directory, logging_enabled=False)
+    # копируем taskgen.4ht из настроек в данную директорию
+    copy_taskgen_4ht(folder=results_directory, logging_enabled=False)
+
     logging.info('Билет № ' + str(variant_number) + ' в TeX формате создан!')
 
 
@@ -887,8 +890,9 @@ def make_variants(folder=config.get('GENERAL', 'bank_folder'), size=1, start=1):
     os.makedirs(results_directory)
 
     # обновляем стилевой файл taskgen.sty
-    dst_taskgen_sty_path = os.path.join(results_directory, 'taskgen.sty')
-    shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
+    copy_taskgen_sty(folder=results_directory, force=True, logging_enabled=False)
+    # обновляем файл taskgen.4ht
+    copy_taskgen_4ht(folder=results_directory, force=True, logging_enabled=False)
 
     # сначала создаем структуру вариантов, т.е. определяем из каких файлов подстановок будет состоять каждый вариант
     # сохраняем ее как в машинном виде, так и в человекочитаемом
@@ -928,7 +932,7 @@ def variants2pdf():
              os.path.join(os.getcwd(), 'results', 'pdf'), in_one_page=True)
 
 
-def tex2html(sourcepath=config.get('GENERAL', 'bank_folder'), targetpath=''):
+def tex2html(sourcepath=config.get('GENERAL', 'bank_folder'), targetpath='', remove_tmp_folder=True):
     '''
     Конвертирует TeX файл в HTML. Использует make4ht.
 
@@ -940,11 +944,11 @@ def tex2html(sourcepath=config.get('GENERAL', 'bank_folder'), targetpath=''):
     if os.path.isdir(sourcepath):
         is_task_folder = get_parametrizator_path(sourcepath, logging_enabled=False) is not False
         if is_task_folder:
-            tex_substitutions2html_optimized(folder=sourcepath, remerge=True)
+            tex_substitutions2html_optimized(folder=sourcepath, remerge=True, remove_tmp_folder=remove_tmp_folder)
             return True
         else:
             for task_parametrizer_file in glob.glob(os.path.join(sourcepath, '**', '*.ipynb'), recursive=True):
-                tex2html(os.path.dirname(task_parametrizer_file))
+                tex2html(os.path.dirname(task_parametrizer_file), remove_tmp_folder=remove_tmp_folder)
             return True
     targetpath = os.path.abspath(targetpath)
 
@@ -952,14 +956,17 @@ def tex2html(sourcepath=config.get('GENERAL', 'bank_folder'), targetpath=''):
 
     # создаем временный каталог для этой задачи, копируем туда конфиги, а затем переходим в него
     tempdir = os.path.join(os.getcwd(), 'tmp', str(binascii.crc32(targetpath.encode('utf8'))))
-    if not os.path.exists(tempdir):
-        os.makedirs(tempdir)
+    if os.path.exists(tempdir):
+        shutil.rmtree(tempdir)
+    os.makedirs(tempdir)
     shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'ht5mjlatex.cfg'),
                     os.path.join(tempdir, 'ht5mjlatex.cfg'))
     shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'mathjaxcommands.tex'),
                     os.path.join(tempdir, 'mathjaxcommands.tex'))
     shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'),
                     os.path.join(tempdir, 'taskgen.sty'))
+    shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.4ht'),
+                    os.path.join(tempdir, 'taskgen.4ht'))
     # копируем нужный tex файл во временную директорию
     shutil.copyfile(sourcepath, os.path.join(tempdir, os.path.basename(sourcepath)))
     os.chdir(tempdir)
@@ -975,23 +982,17 @@ def tex2html(sourcepath=config.get('GENERAL', 'bank_folder'), targetpath=''):
 
     os.chdir(initial_path)
 
-    # добавляем в html файл параметры для красивого отображения скобочек
-    with open(targetpath, 'r', encoding='utf-8') as file:
-        html = file.read()
-        html = html.replace('class="MathClass-open">', 'class="MathClass-open" stretchy="false">')
-        html = html.replace('class="MathClass-close">', 'class="MathClass-close" stretchy="false">')
-    with open(targetpath, 'w', encoding='utf-8') as file:
-        file.write(html)
-
     # копируем исходный код mathjax в папку назначения
-    dst_mathjax_path = os.path.join(os.path.dirname(targetpath), 'mathjax.js')
-    if not os.path.exists(dst_mathjax_path):
-        shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'mathjax.js'), dst_mathjax_path)
+    copy_mathjax_js(folder=os.path.dirname(targetpath), logging_enabled=False)
 
-    # очищаем текущую директорию от временных файлов
-    logging.info('Удаляем временные файлы для ' + sourcepath + '...')
-    # удаляем временную директорию
-    shutil.rmtree(tempdir)
+    if remove_tmp_folder:
+        # очищаем текущую директорию от временных файлов
+        logging.info('Удаляем временные файлы для ' + sourcepath + '...')
+        # удаляем временную директорию
+        shutil.rmtree(tempdir)
+    else:
+        logging.info('Временные файлы для "' + sourcepath + '" расположены в "' + tempdir + '"')
+
 
     return True
 
@@ -1021,7 +1022,7 @@ def tex_substitutions2html(multiprocessing=True):
     logging.info('Файлы вариантов сконвертированы в HTML!')
 
 
-def mergedTex2HtmlWithSlicing(merged_tex_file):
+def mergedTex2HtmlWithSlicing(merged_tex_file, remove_tmp_folder=True):
     '''
     Конвертирует объединенный TeX файл в HTML.
     После конвертации разбивает его на множество мелких html файлов, из которых он состоит.
@@ -1035,143 +1036,56 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
     Ожидается, что merged файл лежит в директории с названием "tex".
     Результирующие файлы будут расположены в директории "html", лежащей рядом с "tex".
     '''
-    # В результирующем html файле есть комментарии, показывающие соответствие строчки в исходном tex файле.
-    # Благодаря этому достаточно проанализировать teх файл и определить номера строчек,
-    # соответствующие началам окружений. Дальше мы просто вырезаем из html нужные куски.
-
     html_directory = os.path.join(os.path.dirname(os.path.dirname(merged_tex_file)), 'html')
-    if not os.path.exists(html_directory):
-        os.makedirs(html_directory)
+    if os.path.exists(html_directory):
+        shutil.rmtree(html_directory)
+    os.makedirs(html_directory)
 
     # конвертируем tex в html
     merged_html_file = os.path.join(html_directory, 'substitutions_merged.html')
     tex2html(
         sourcepath=merged_tex_file,
-        targetpath=merged_html_file
+        targetpath=merged_html_file,
+        remove_tmp_folder=remove_tmp_folder
     )
 
-    with open(merged_tex_file, 'r', encoding='utf-8') as file:
-        source_tex = file.read()
+    # объединенный файл может содержать подстановки из нескольких задач
+    # получаем содержимое всех div.problem, div.solution, div.answer
+    # и сохраняем их в папку подстановок задачи
 
-    w = LatexWalker(source_tex)
-    (nodelist, pos, len_) = w.get_latex_nodes(pos=0)
-
-    problems_pos = []
-    solutions_pos = []
-    answers_pos = []
-
-    for node in nodelist:
-        if node.isNodeType(LatexEnvironmentNode) and node.environmentname == 'document':
-            for node in node.nodelist:
-                if node.isNodeType(LatexEnvironmentNode):
-                    if node.environmentname == 'problem':
-                        problems_pos.append(node.pos)
-                    elif node.environmentname == 'solution':
-                        solutions_pos.append(node.pos)
-                    elif node.environmentname == 'answer':
-                        answers_pos.append(node.pos)
-
-    # количество символов в каждой строке
-    size_lines = [len(line) for line in source_tex.split('\n')]
-
-    acc = 0
-    lines_pos = []
-    for size in size_lines:
-        lines_pos.append(acc)
-        acc += size + 1
-
-    def find_line(pos, line_start=0):
-        for cur_line, cur_pos in enumerate(lines_pos[line_start:]):
-            if cur_pos == pos:
-                return cur_line + line_start + 1
-            elif cur_pos > pos:
-                break
-        return cur_line + line_start + 1
-
-    # получить из HTML код, соответствующий промежутку между 2-мя заданными
-    # строчкам исходного TeX файла
     with open(merged_html_file, 'r', encoding='utf-8') as file:
         source_html = file.read()
+    soup = BeautifulSoup(source_html, 'html.parser')
 
-    # список строк, отраженных в html файле
-    html_lines = list(map(int, re.findall(r'<!-- ?l. (.*?) ?-->', source_html)))
-    if len(html_lines) == 0:
-        logging.error(merged_html_file + ' - не найдено html данных задач!')
-        return
-
-    def find_right_closest_line_in_html(line_number, start_line=0):
-        for i, cur_line in enumerate(html_lines[start_line:]):
-            if cur_line >= line_number:
-                return cur_line
-            else:
-                continue
-        return cur_line
-
-    def extract_html(first_env_startline, second_env_startline=None):
-        if first_env_startline is None:
-            start_pos = 0
-        else:
-            # стартовая позиция - это ближайшая справа строка в html
-            start_key = '<!--l. ' + str(find_right_closest_line_in_html(first_env_startline)) + '-->'
-            if start_key not in source_html:
-                start_key = '<!-- l. ' + str(find_right_closest_line_in_html(first_env_startline)) + ' -->'
-            start_pos = source_html.find(start_key) + len(start_key)
-        if second_env_startline is None:
-            end_key = '</div></body>'
-            end_pos = source_html.find(end_key)
-            return source_html[start_pos:end_pos]
-        else:
-            end_key = '<!--l. ' + str(find_right_closest_line_in_html(second_env_startline)) + '-->'
-            if end_key not in source_html:
-                end_key = '<!-- l. ' + str(find_right_closest_line_in_html(second_env_startline)) + ' -->'
-            end_pos = source_html.find(end_key) + len(end_key)
-            return source_html[start_pos:end_pos - len(end_key)]
-
-    solution_line = 0
-    tasks = list(zip(problems_pos, solutions_pos, answers_pos))
-    problems_html = []
-    solutions_html = []
-    answers_html = []
-    for number, task_pos in enumerate(tasks):
-        (problem_pos, solution_pos, answer_pos) = task_pos
-        problem_line = find_line(pos=problem_pos, line_start=solution_line)
-        solution_line = find_line(pos=solution_pos, line_start=problem_line - 1)
-        answer_line = find_line(pos=answer_pos, line_start=solution_line - 1)
-
-        problem_html = extract_html(problem_line, solution_line)
-        problems_html.append(problem_html)
-
-        solution_html = extract_html(solution_line, answer_line)
-        solutions_html.append(solution_html)
-
-        if number < len(tasks) - 1:
-            answer_html = extract_html(answer_line,
-                                       find_line(pos=tasks[number + 1][0], line_start=answer_line))
-        else:
-            answer_html = extract_html(answer_line, None)
-        answers_html.append(answer_html)
-
-    # сохраняем разбиение merged файла
-    for i, task in enumerate(zip(problems_html, solutions_html, answers_html)):
-        (problem, solution, answer) = task
-
-        # cохраняем файл с условием
-        dst_file = os.path.join(html_directory, 'substitution_' + str(i + 1) + '_problem.html')
+    subs_cnt = 0
+    # окружения problem
+    problems = soup.find_all('div', class_='problem')
+    for problem in problems:
+        dst_file = os.path.join(html_directory, 'substitution_' + str(subs_cnt + 1) + '_problem.html')
         with open(dst_file, 'w', encoding='utf-8') as file:
-            file.write(problem)
+            file.write(problem.prettify()[len('<div class="problem">'):-(len('</div>') + 1)])
+        subs_cnt += 1
 
-        # сохраняем файл с решением
-        dst_file = os.path.join(html_directory, 'substitution_' + str(i + 1) + '_solution.html')
+    subs_cnt = 0
+    # окружения solution
+    solutions = soup.find_all('div', class_='solution')
+    for solution in solutions:
+        dst_file = os.path.join(html_directory, 'substitution_' + str(subs_cnt + 1) + '_solution.html')
         with open(dst_file, 'w', encoding='utf-8') as file:
-            file.write(solution)
+            file.write(solution.prettify()[len('<div class="solution">'):-(len('</div>') + 1)])
+        subs_cnt += 1
 
-        # сохраняем файл с ответаси
-        dst_file = os.path.join(html_directory, 'substitution_' + str(i + 1) + '_answer.html')
+    subs_cnt = 0
+    # окружения answer
+    answers = soup.find_all('div', class_='answer')
+    for answer in answers:
+        dst_file = os.path.join(html_directory, 'substitution_' + str(subs_cnt + 1) + '_answer.html')
         with open(dst_file, 'w', encoding='utf-8') as file:
-            file.write(answer)
+            file.write(answer.prettify()[len('<div class="answer">'):-(len('</div>') + 1)])
+        subs_cnt += 1
 
 
-def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder'), remerge=False):
+def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder'), remerge=False, remove_tmp_folder=True):
     '''
     Конвертирует TeX файлы подстановок в HTML оптимизированным способом за счет использования merged файла.
     Благодаря этому множество файлов подстановок данной задачи конвертируются в html за 1 проход.
@@ -1191,7 +1105,7 @@ def tex_substitutions2html_optimized(folder=config.get('GENERAL', 'bank_folder')
             # сохраняем объединенный файл подстановок
             with open(os.path.join(substitutions_directory, 'substitutions_merged.tex'), 'w', encoding='utf-8') as file:
                 file.write(merged_latex_file)
-        mergedTex2HtmlWithSlicing(file_path)
+        mergedTex2HtmlWithSlicing(file_path, remove_tmp_folder=remove_tmp_folder)
     logging.info('Файлы подстановок сконвертированы в HTML!')
 
 
@@ -1233,14 +1147,13 @@ def show(subs_data={}):
     if not os.path.exists(results_directory):
         os.makedirs(results_directory)
 
-    # копируем taskgen.sty из настроек в данную директорию
-    dst_taskgen_sty_path = os.path.join(results_directory, 'taskgen.sty')
-    if not os.path.exists(dst_taskgen_sty_path):
-        shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
-    # копируем mathjax.js из настроек в данную директорию
-    dst_mathjax_js_path = os.path.join(results_directory, 'mathjax.js')
-    if not os.path.exists(dst_mathjax_js_path):
-        shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'mathjax.js'), dst_mathjax_js_path)
+    # обновляем стилевой файл taskgen.sty
+    copy_taskgen_sty(folder=results_directory, logging_enabled=False)
+    # обновляем файл taskgen.4ht
+    copy_taskgen_4ht(folder=results_directory, logging_enabled=False)
+    # обновляем файл mathjax.js
+    copy_mathjax_js(folder=results_directory, logging_enabled=False)
+
     # подставляем переданные значения
     logging.info(f'Подставляем переданные значения в шаблон "{template_path}"...')
     subs_file_name = datetime.now().strftime("subs_%d.%m.%Y_%H-%M-%S.tex")
@@ -1258,19 +1171,91 @@ def show(subs_data={}):
         return HTML('<base target="_self" href="./tmp/">' + src)
 
 
-def copy_taskgen_sty(folder=os.getcwd(), force=False):
+def copy_taskgen_sty(folder=os.getcwd(), force=False, logging_enabled=True):
     '''
-    Копирует стилевой файл TeX taskgen.sty из папки настроек в указанную (по умолчанию в текущую).
+    Копирует стилевой файл "taskgen.sty" из папки настроек в указанную (по умолчанию в текущую).
+    Если в указанной папке уже есть "taskgen.sty", то он его перезапишет в том случае,
+    если дата изменения "taskgen.sty" в папке настроек более поздняя.
+
     :param folder: путь к папке, в которую нужно скопировать стилевой файл
-    :param force: нужно ли перезаписывать стилевой файл, если он уже есть в указанной директории
+    :param force: нужно ли перезаписывать стилевой файл, если он уже есть в указанной директории и у него более
+    поздняя дата редактирования, чем у файла из папки настроек
     '''
+    if os.path.basename(folder) == 'data':
+        return None
     dst_taskgen_sty_path = os.path.join(folder, 'taskgen.sty')
-    if force or not os.path.exists(dst_taskgen_sty_path):
-        shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty'), dst_taskgen_sty_path)
-        logging.info(
-            'Cтилевой файл TeX taskgen.sty из папки настроек "' + __SETTINGS_FOLDER__ + '" скопирован в папку "' +
-            folder + '"')
+    primary_taskgen_sty_path = os.path.join(__SETTINGS_FOLDER__, 'taskgen.sty')
+    if force or not os.path.exists(dst_taskgen_sty_path) or \
+            os.path.getmtime(primary_taskgen_sty_path) > os.path.getmtime(dst_taskgen_sty_path):
+        shutil.copyfile(primary_taskgen_sty_path, dst_taskgen_sty_path)
+        if logging_enabled:
+            logging.info(
+                'Cтилевой файл TeX "taskgen.sty" из папки настроек "' + __SETTINGS_FOLDER__ + '" скопирован в папку "' +
+                folder + '"')
+        return True
     else:
-        logging.info(
-            'Cтилевой файл TeX taskgen.sty уже есть в указанной директории! Используйте функцию с параметром ' +
-            '"force=True" для перезаписи файла!')
+        if logging_enabled:
+            logging.info(
+                'Cтилевой файл TeX "taskgen.sty" уже есть в указанной директории! Используйте функцию с параметром ' +
+                '"force=True" для перезаписи файла!')
+        return False
+
+
+def copy_taskgen_4ht(folder=os.getcwd(), force=False, logging_enabled=True):
+    '''
+    Копирует файл конфигурации make4ht "taskgen.4ht" из папки настроек в указанную (по умолчанию в текущую).
+    Если в указанной папке уже есть "taskgen.4ht", то он его перезапишет в том случае,
+    если дата изменения "taskgen.4ht" в папке настроек более поздняя.
+
+    :param folder: путь к папке, в которую нужно скопировать файл конфигурации make4ht
+    :param force: нужно ли перезаписывать файл конфигурации, если он уже есть в указанной директории и у него более
+    поздняя дата редактирования, чем у файла из папки настроек
+    '''
+    if os.path.basename(folder) == 'data':
+        return None
+    dst_taskgen_4ht_path = os.path.join(folder, 'taskgen.4ht')
+    primary_taskgen_4ht_path = os.path.join(__SETTINGS_FOLDER__, 'taskgen.4ht')
+    if force or not os.path.exists(dst_taskgen_4ht_path) or \
+            os.path.getmtime(primary_taskgen_4ht_path) > os.path.getmtime(dst_taskgen_4ht_path):
+        shutil.copyfile(primary_taskgen_4ht_path, dst_taskgen_4ht_path)
+        if logging_enabled:
+            logging.info(
+                'Файл конфигурации make4ht "taskgen.4ht" из папки настроек "' + __SETTINGS_FOLDER__ +
+                '" скопирован в папку "' + folder + '"')
+        return True
+    else:
+        if logging_enabled:
+            logging.info(
+                'Файл конфигурации make4ht "taskgen.4ht" уже есть в указанной директории! Используйте функцию с параметром ' +
+                '"force=True" для перезаписи файла!')
+        return False
+
+
+def copy_mathjax_js(folder=os.getcwd(), force=False, logging_enabled=True):
+    '''
+    Копирует файл "mathjax.js" из папки настроек в указанную (по умолчанию в текущую).
+    Если в указанной папке уже есть "mathjax.js", то он его перезапишет в том случае,
+    если дата изменения "mathjax.js" в папке настроек более поздняя.
+
+    :param folder: путь к папке, в которую нужно скопировать файл "mathjax.js"
+    :param force: нужно ли перезаписывать файл "mathjax.js", если он уже есть в указанной директории и у него более
+    поздняя дата редактирования, чем у файла из папки настроек
+    '''
+    if os.path.basename(folder) == 'data':
+        return None
+    dst_taskgen_4ht_path = os.path.join(folder, 'mathjax.js')
+    primary_taskgen_4ht_path = os.path.join(__SETTINGS_FOLDER__, 'mathjax.js')
+    if force or not os.path.exists(dst_taskgen_4ht_path) or \
+            os.path.getmtime(primary_taskgen_4ht_path) > os.path.getmtime(dst_taskgen_4ht_path):
+        shutil.copyfile(primary_taskgen_4ht_path, dst_taskgen_4ht_path)
+        if logging_enabled:
+            logging.info(
+                'Файл "mathjax.js" из папки настроек "' + __SETTINGS_FOLDER__ +
+                '" скопирован в папку "' + folder + '"')
+        return True
+    else:
+        if logging_enabled:
+            logging.info(
+                'Файл "mathjax.js" уже есть в указанной директории! Используйте функцию с параметром ' +
+                '"force=True" для перезаписи файла!')
+        return False
