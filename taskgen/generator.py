@@ -1094,7 +1094,7 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
         source_html = file.read()
 
     # список строк, отраженных в html файле
-    html_lines = list(map(int, re.findall(r'<!-- l. (.*?) -->', source_html)))
+    html_lines = list(map(int, re.findall(r'<!-- ?l. (.*?) ?-->', source_html)))
     if len(html_lines) == 0:
         logging.error(merged_html_file + ' - не найдено html данных задач!')
         return
@@ -1112,14 +1112,18 @@ def mergedTex2HtmlWithSlicing(merged_tex_file):
             start_pos = 0
         else:
             # стартовая позиция - это ближайшая справа строка в html
-            start_key = '<!-- l. ' + str(find_right_closest_line_in_html(first_env_startline)) + ' -->'
+            start_key = '<!--l. ' + str(find_right_closest_line_in_html(first_env_startline)) + '-->'
+            if start_key not in source_html:
+                start_key = '<!-- l. ' + str(find_right_closest_line_in_html(first_env_startline)) + ' -->'
             start_pos = source_html.find(start_key) + len(start_key)
         if second_env_startline is None:
-            end_key = '</body>'
+            end_key = '</div></body>'
             end_pos = source_html.find(end_key)
             return source_html[start_pos:end_pos]
         else:
-            end_key = '<!-- l. ' + str(find_right_closest_line_in_html(second_env_startline)) + ' -->'
+            end_key = '<!--l. ' + str(find_right_closest_line_in_html(second_env_startline)) + '-->'
+            if end_key not in source_html:
+                end_key = '<!-- l. ' + str(find_right_closest_line_in_html(second_env_startline)) + ' -->'
             end_pos = source_html.find(end_key) + len(end_key)
             return source_html[start_pos:end_pos - len(end_key)]
 
