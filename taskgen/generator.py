@@ -253,6 +253,9 @@ def gen_subs(n=1, folder=config.get('GENERAL', 'bank_folder')):
         # очищаем прошлые подстановки
         for file in glob.glob(os.path.join(substitutions_directory, 'substitution_*.*')):
             os.remove(file)
+        html_subs_folder = os.path.join(os.path.dirname(substitutions_directory), 'html');
+        if os.path.exists(html_subs_folder):
+            shutil.rmtree(html_subs_folder)
         # удаляем прошлый пакет taskgen.sty
         dst_taskgen_sty_path = os.path.join(substitutions_directory, 'taskgen.sty')
         if os.path.exists(dst_taskgen_sty_path):
@@ -489,19 +492,27 @@ def make_html_variant(variant_number, structure, with_solution=True):
 
     # формируем содержимое билета
     # берем шаблон задачи
+    task_template_file = os.path.join(template_folder, 'task.html')
+    with open(task_template_file, 'r', encoding='utf-8') as file:
+        task_template = file.read()
+
     problem_template_file = os.path.join(template_folder, 'problem.html')
     with open(problem_template_file, 'r', encoding='utf-8') as file:
-        problem_template = file.read()
+        task_template = task_template.replace('${problem}', file.read())
 
     # берем шаблон решения
     if with_solution:
         solution_template_file = os.path.join(template_folder, 'solution.html')
         with open(solution_template_file, 'r', encoding='utf-8') as file:
-            solution_template = file.read()
+            task_template = task_template.replace('${solution}', file.read())
 
         answer_template_file = os.path.join(template_folder, 'answer.html')
         with open(answer_template_file, 'r', encoding='utf-8') as file:
-            answer_template = file.read()
+            task_template = task_template.replace('${answer}', file.read())
+    else:
+        task_template = task_template.replace('${solution}', '')
+        task_template = task_template.replace('${answer}', '')
+
 
     # обходим каждый вопрос
     variant_src = ''
@@ -530,18 +541,16 @@ def make_html_variant(variant_number, structure, with_solution=True):
                 answer_html_src = file.read()
 
         # добавляем задачу в тело билета
-        variant_src += problem_template
+        variant_src += task_template
         variant_src = variant_src.replace('${problem_number}', str(problem_number + 1))
         variant_src = variant_src.replace('${problem_max_score}', '10')
         variant_src = variant_src.replace('${problem_src}', problem_html_src)
 
         # добавляем решение к задаче
         if with_solution:
-            variant_src += solution_template
             variant_src = variant_src.replace('${solution_src}', solution_html_src)
-
-            variant_src += answer_template
             variant_src = variant_src.replace('${answer_src}', answer_html_src)
+
     # подставляем содержимое билета
     variant = variant.replace('${variant_src}', variant_src)
 
