@@ -1,6 +1,5 @@
 import os
 import glob
-from pylatexenc.latexwalker import LatexWalker, LatexEnvironmentNode, LatexMacroNode, LatexGroupNode
 import random
 import subprocess as subp
 from .html2pdf import html2pdf
@@ -516,7 +515,6 @@ def make_html_variant(variant_number, structure, with_solution=True):
         task_template = task_template.replace('${solution}', '')
         task_template = task_template.replace('${answer}', '')
 
-
     # обходим каждый вопрос
     variant_src = ''
     for problem_number, substitution_tex_file in enumerate(structure):
@@ -570,16 +568,8 @@ def make_html_variant(variant_number, structure, with_solution=True):
     with open(os.path.join(results_directory, dst_file_name + '.html'), 'w', encoding='utf-8') as file:
         file.write(variant)
 
-    # создаем копию css файла
-    if not os.path.exists(os.path.join(results_directory, 'stylesheets.css')):
-        shutil.copyfile(os.path.join(config.get('GENERAL', 'templates_folder'), 'html', 'stylesheets.css'),
-                        os.path.join(results_directory, 'stylesheets.css'))
-
-    # копируем изображения, лежащие в папке шаблона, если нужно
-    images_files = glob.glob(os.path.join(template_folder, '*.png'))
-    for imagepath in images_files:
-        if not os.path.exists(os.path.join(results_directory, os.path.basename(imagepath))):
-            shutil.copyfile(imagepath, os.path.join(results_directory, os.path.basename(imagepath)))
+    # копируем файлы шаблона
+    copy_template_files(results_directory)
 
     logging.info('Билет № ' + str(variant_number) +
                  ' в HTML формате' +
@@ -914,9 +904,8 @@ def make_variants(folder=config.get('GENERAL', 'bank_folder'), size=1, start=1):
     merge_html_variants(with_solution=True)
     merge_html_variants(with_solution=False)
 
-    # обновляем исходный код mathjax
-    dst_mathjax_path = os.path.join(os.path.join(os.path.dirname(results_directory), 'html'), 'mathjax.js')
-    shutil.copyfile(os.path.join(__SETTINGS_FOLDER__, 'mathjax.js'), dst_mathjax_path)
+    # копируем ресурсы шаблона
+    copy_template_files(folder=os.path.join(os.path.dirname(results_directory), 'html'))
 
     # создаем объединенный файл вариантов в формате Moodle XML
     merge_moodle_variants()
@@ -982,8 +971,8 @@ def tex2html(sourcepath=config.get('GENERAL', 'bank_folder'), targetpath='', rem
 
     os.chdir(initial_path)
 
-    # копируем исходный код mathjax в папку назначения
-    copy_mathjax_js(folder=os.path.dirname(targetpath), logging_enabled=False)
+    # копируем js файлы шаблона в папку назначения
+    copy_template_files(folder=os.path.dirname(targetpath), extensions=['js'])
 
     if remove_tmp_folder:
         # очищаем текущую директорию от временных файлов
@@ -1151,8 +1140,8 @@ def show(subs_data={}):
     copy_taskgen_sty(folder=results_directory, logging_enabled=False)
     # обновляем файл taskgen.4ht
     copy_taskgen_4ht(folder=results_directory, logging_enabled=False)
-    # обновляем файл mathjax.js
-    copy_mathjax_js(folder=results_directory, logging_enabled=False)
+    # копируем js файлы шаблона
+    copy_template_files(folder=results_directory, extensions=['js'])
 
     # подставляем переданные значения
     logging.info(f'Подставляем переданные значения в шаблон "{template_path}"...')
@@ -1231,31 +1220,26 @@ def copy_taskgen_4ht(folder=os.getcwd(), force=False, logging_enabled=True):
         return False
 
 
-def copy_mathjax_js(folder=os.getcwd(), force=False, logging_enabled=True):
+def copy_template_files(folder=os.getcwd(), extensions=['js', 'css', 'png'], force=False):
     '''
-    Копирует файл "mathjax.js" из папки настроек в указанную (по умолчанию в текущую).
-    Если в указанной папке уже есть "mathjax.js", то он его перезапишет в том случае,
-    если дата изменения "mathjax.js" в папке настроек более поздняя.
+    Копирует файлы с данными расширениями из папки шаблона в указанную (по умолчанию в текущую).
+    Если в указанной папке уже есть какой-либо файл, то он его перезапишет
+    в том случае, если дата изменения в папке шаблона более поздняя.
 
-    :param folder: путь к папке, в которую нужно скопировать файл "mathjax.js"
-    :param force: нужно ли перезаписывать файл "mathjax.js", если он уже есть в указанной директории и у него более
-    поздняя дата редактирования, чем у файла из папки настроек
+    :param folder: путь к папке, в которую нужно скопировать файлы из папки шаблона
+    :param force: нужно ли перезаписывать файл, если он уже есть в указанной директории
+    и у него более поздняя дата редактирования, чем у файла из папки шаблона
     '''
     if os.path.basename(folder) == 'data':
         return None
-    dst_taskgen_4ht_path = os.path.join(folder, 'mathjax.js')
-    primary_taskgen_4ht_path = os.path.join(__SETTINGS_FOLDER__, 'mathjax.js')
-    if force or not os.path.exists(dst_taskgen_4ht_path) or \
-            os.path.getmtime(primary_taskgen_4ht_path) > os.path.getmtime(dst_taskgen_4ht_path):
-        shutil.copyfile(primary_taskgen_4ht_path, dst_taskgen_4ht_path)
-        if logging_enabled:
-            logging.info(
-                'Файл "mathjax.js" из папки настроек "' + __SETTINGS_FOLDER__ +
-                '" скопирован в папку "' + folder + '"')
-        return True
-    else:
-        if logging_enabled:
-            logging.info(
-                'Файл "mathjax.js" уже есть в указанной директории! Используйте функцию с параметром ' +
-                '"force=True" для перезаписи файла!')
-        return False
+    for extension in extensions:
+        # получаем список файлов в папке шаблона
+        template_folder = os.path.join(os.path.dirname(__SETTINGS_FOLDER__),
+                                       config.get('GENERAL', 'templates_folder'), 'html')
+        files = glob.glob(os.path.join(template_folder, '*.' + extension))
+        # копируем файлы в указанную папку
+        for primary_path in files:
+            dst_path = os.path.join(folder, os.path.basename(primary_path))
+            if force or not os.path.exists(dst_path) or \
+                os.path.getmtime(primary_path) > os.path.getmtime(dst_path):
+                shutil.copyfile(primary_path, dst_path)
