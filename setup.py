@@ -19,7 +19,7 @@ def parse_requirements(filename):
 
 
 setup(name='taskgen',
-      version='0.3.7.1',
+      version='0.3.8',
       author='Артём Золотаревский',
       author_email='artyom@zolotarevskiy.ru',
       description='Ядро генератора банка задач на базе MiKTeX и Jupyter Notebook',

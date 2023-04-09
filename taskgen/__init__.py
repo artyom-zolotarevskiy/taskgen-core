@@ -24,16 +24,23 @@ Copyright (c) 2023 Артём Золотаревский
 Отдельная благодарность научному руководителю, Павлу Евгеньевичу Рябову,
 за постановку задачи и постоянное внимание к работе.
 '''
-from taskgen.generator import *
-from taskgen.html2pdf import *
+from taskgen.config import *
+from taskgen.functions import *
+from taskgen.converters import *
+from taskgen.stats import *
+from taskgen.tex import *
+from taskgen.html import *
+from taskgen.moodle import *
+from taskgen.variable_types import *
+from taskgen.main import *
 
 format = "%(asctime)s: %(message)s"
 logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
 
 __title__ = 'artyom-zolotarevskiy'
-__version__ = '0.3.7.1'
+__version__ = '0.3.8'
 __url__ = 'https://github.com/artyom-zolotarevskiy/taskgen-core'
 __author__ = 'Артём Золотаревский'
 __author_email__ = 'artyom@zolotarevskiy.ru'
 
-__all__ = ["generator", "html2pdf"]
+__all__ = ["config", "functions", "converters", "stats", "tex", "html", "moodle", "variable_types", "main"]
