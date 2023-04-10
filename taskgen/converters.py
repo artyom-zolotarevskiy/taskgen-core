@@ -6,6 +6,7 @@ import shutil
 import logging
 import shlex
 import subprocess as subp
+import time
 from binascii import crc32
 from PyPDF2 import PdfFileMerger, PdfFileReader
 from selenium import webdriver
@@ -73,12 +74,9 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'),
 
         # дожидаемся полной инициализации LaTex на странице
         WebDriverWait(driver, 10).until(__latex_is_loaded)
+        time.sleep(0.5)
 
         # получаем pdf
-
-        last_num_pages = -1
-        last_pdf_file = None
-
         print_options = {
             'scale': 1,
         }
@@ -94,22 +92,13 @@ def html2pdf(source=os.path.join(os.getcwd(), 'html'),
                 num_pages = pdf_reader.numPages
                 # print('При масштабировании {} кол-во страниц: {}'.format(print_options['scale'], num_pages))
 
-                if last_num_pages > 1 and num_pages == 1:
+                if num_pages == 1:
                     break
-                elif last_num_pages == 1 and num_pages == 2:
-                    result = last_pdf_file
-                    break
-                elif num_pages == 1:
-                    print_options['scale'] += scale_step
                 else:
                     print_options['scale'] -= scale_step
-
-                last_num_pages = num_pages
-                last_pdf_file = result
         else:
             result = __send_devtools(driver, "Page.printToPDF", print_options)
             result = base64.b64decode(result['data'])
-
 
         # сохраняем pdf
         print('Сохраняем файл...', '\n')

@@ -38,7 +38,7 @@ format = "%(asctime)s: %(message)s"
 logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
 
 __title__ = 'artyom-zolotarevskiy'
-__version__ = '0.3.8'
+__version__ = '0.3.8.1'
 __url__ = 'https://github.com/artyom-zolotarevskiy/taskgen-core'
 __author__ = 'Артём Золотаревский'
 __author_email__ = 'artyom@zolotarevskiy.ru'

@@ -47,7 +47,7 @@ def make_moodle_variant(variant_number, structure):
     answers_xml = ''
     last_answer_index = 0
     for problem_number, substitution_tex_file in enumerate(structure):
-        # путь к соответствующем html файлу условия
+        # путь к соответствующему html файлу условия
         problem_html_file = os.path.join(os.path.dirname(os.path.dirname(substitution_tex_file)),
                                          'html',
                                          os.path.splitext(os.path.basename(substitution_tex_file))[
@@ -55,7 +55,11 @@ def make_moodle_variant(variant_number, structure):
         with open(problem_html_file, 'r', encoding='utf-8') as file:
             problem_html_src = file.read()
 
-        # путь к соответствующем html файлу ответов
+        # заменяем названия датасетов
+        # встраиваем изображения
+        # встраиваем датасеты
+
+        # путь к соответствующему html файлу ответов
         answer_html_file = os.path.join(os.path.dirname(os.path.dirname(substitution_tex_file)),
                                           'html',
                                           os.path.splitext(os.path.basename(substitution_tex_file))[
